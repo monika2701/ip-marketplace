@@ -4,18 +4,18 @@ function Faq(props) {
     return(
      <>
 
-        <div className="container6">
+      <div id="carousel" class="carousel slide" data-ride="carousel" data-interval="false">
+      <div class="carousel-inner">
+      <div class="carousel-item active">
+        <div className="faqsection1">
             <center>
               <h1>FAQ</h1>
             </center>
-            <a href="#faqSection2"> <div class="encircle bounce animated" style={{marginTop:'160px'}}>
-        <div class="arrow">
         </div>
-        </div>  </a>
-        </div>
+       </div>
 
 
-<div id="faqSection2">
+       <div class="carousel-item">
         <section className="accordion-section clearfix mt-5">
         <div className="container pt-5">
         
@@ -83,11 +83,18 @@ function Faq(props) {
         
         </div>
       </section>
-      <a href="#section7"> <div class="encircle bounce animated" style={{marginBottom:'40px'}}>
-        <div class="arrow">
-        </div>
-        </div>  </a>
       </div>
+	</div>
+  <a class="carousel-control-prev" href="#carousel" role="button" data-slide="prev">
+    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+    <span class="sr-only">Previous</span>
+  </a>
+  <a class="carousel-control-next" href="#carousel" role="button" data-slide="next">
+    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+    <span class="sr-only">Next</span>
+  </a>
+</div> 
+     
 </>
 )
 }

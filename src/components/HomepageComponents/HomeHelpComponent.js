@@ -17,8 +17,8 @@ class HomeHelp extends React.Component{
   
     render(){  
    return (
-    <div id="section3">
-    <div className="container2">
+    
+    <div className="homesection3">
     <section id="home">
         <div className="container">
 
@@ -94,17 +94,14 @@ class HomeHelp extends React.Component{
                 </div>
              </div>
             
-             {/* <a class="ct-btn-scroll mt-5" href="#section4"><img alt="Arrow Down Icon" src="assets/13.png"/></a> */}
+            
            </div>
-           <a href="#section4"> <div class="encircle bounce animated mt-5">
-  <div class="arrow">
-  </div>
-</div>  </a>
+         
         </div>
    </section>
 </div> 
 
-</div> 
+ 
 
           )
     }

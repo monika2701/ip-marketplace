@@ -18,24 +18,25 @@ class Corporates extends React.Component{
         render(){    
    return (
     <>
-     <div className="container5">
+    <div id="carousel" class="carousel slide" data-ride="carousel" data-interval="false">
+      <div class="carousel-inner">
+      <div class="carousel-item active">
+     <div className="corporatesection1">
        <center>
         <h1>Parintek Innovations Provide</h1>
         <p>FULL IP SERVICES TO</p>
         <h1>Corporates</h1>
        </center>
-       <a href="#corporateSection2"> <div class="encircle bounce animated" style={{marginTop:'120px'}}>
-  <div class="arrow">
-  </div>
-</div>  </a>
      </div>
+   </div>
+    
 
-     <div id="corporateSection2">
+   <div class="carousel-item">
     <section id="cards-columns">
-	    <div className="container pt-5 mb-5 pb-5">
+	    <div className="container pt-4 pb-5">
 		
 		<div className="row">
-          <div className="col-lg-4 col-md-6 col-sm-6">
+          <div className="col-lg-4 col-md-6 col-sm-6 my-2">
                 <div className="card">
                 <img className="card-img-top" src="https://i.pinimg.com/564x/c8/a3/76/c8a376d9ae4a2005d5ce5f33dc327bbc.jpg" alt="Card image cap" style={{height:'200px'}}/>
                     <div className="card-body">
@@ -46,7 +47,7 @@ class Corporates extends React.Component{
                  </div>
            </div>
 			
-			    <div className="col-lg-4 col-md-6 col-sm-6">
+			    <div className="col-lg-4 col-md-6 col-sm-6 my-2">
                   <div className="card">
                   <img className="card-img-top" src="https://i.pinimg.com/564x/c8/a3/76/c8a376d9ae4a2005d5ce5f33dc327bbc.jpg" alt="Card image cap" style={{height:'200px'}}/>
                       <div className="card-body">
@@ -57,7 +58,7 @@ class Corporates extends React.Component{
                   </div>
 		         </div>
 			
-			    <div className="col-lg-4 col-md-6 col-sm-6">
+			    <div className="col-lg-4 col-md-6 col-sm-6 my-2">
                   <div className="card">
                   <img className="card-img-top" src="https://i.pinimg.com/564x/c8/a3/76/c8a376d9ae4a2005d5ce5f33dc327bbc.jpg" alt="Card image cap" style={{height:'200px'}}/>
                       <div className="card-body">
@@ -71,13 +72,21 @@ class Corporates extends React.Component{
            modalOpen={this.state.modalOpen}
            handleModalOpen={this.handleModalOpen}/>
 			</div>
-         <a href="#section7"> <div class="encircle bounce animated" style={{marginTop:'10px'}}>
-  <div class="arrow">
-  </div>
-</div>  </a>	
+        
 		</div>
 </section>
 </div>
+	</div>
+  <a class="carousel-control-prev" href="#carousel" role="button" data-slide="prev">
+    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+    <span class="sr-only">Previous</span>
+  </a>
+  <a class="carousel-control-next" href="#carousel" role="button" data-slide="next">
+    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+    <span class="sr-only">Next</span>
+  </a>
+</div>
+
 </>
     )
   

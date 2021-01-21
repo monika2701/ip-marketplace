@@ -5,7 +5,7 @@ function HomeCollab(props) {
     
    return (
 
-    <div id="section4">
+
     <div className="container pt-3">
 
 	<h1><center>Our Collaborators</center></h1>
@@ -57,17 +57,12 @@ function HomeCollab(props) {
                 </div>
             </div>
 
-            <a href="#section5"> <div class="encircle bounce animated mt-2">
-  <div class="arrow">
-  </div>
-</div>  </a>
-           {/*  <a class="ct-btn-scroll" href="#section5"><img alt="Arrow Down Icon" src="assets/13.png"/></a> */}
+           
             
         </div>
        
 </div>
-
-</div>   
+ 
 
 )
 }

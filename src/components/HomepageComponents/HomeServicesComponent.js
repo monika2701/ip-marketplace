@@ -5,7 +5,8 @@ import { Link } from 'react-router-dom';
 function HomeServices(props) {
     
    return (
-<div id="section5">
+     
+
 <div className="services-container">
      <p className="services-title">Services we provide to our clients</p>
         <h1 className="services-title">Parintek at your Service</h1>
@@ -87,20 +88,11 @@ function HomeServices(props) {
                 </div>
                 
           </div>
-          <a href="#section6"> <div class="encircle bounce animated">
-  <div class="arrow">
-  </div>
-</div>  </a>
-         {/*  <div className="row justify-content-center">
-          <a class="ct-btn-scroll" style={{margin:'auto'}} href="#section6"><img alt="Arrow Down Icon" src="assets/13.png"/></a>
-                
-                
-          </div> */}
+         
         </div> 
       
       </div> 
-      
-      </div>
+    
 
    )
 }

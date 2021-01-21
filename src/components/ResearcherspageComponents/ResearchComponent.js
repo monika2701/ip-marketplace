@@ -19,21 +19,22 @@ class Researchers extends React.Component{
    return (
     <>
       
-      <div class="container4">
+      <div id="carousel" class="carousel slide" data-ride="carousel" data-interval="false">
+  <div class="carousel-inner">
+  <div class="carousel-item active">
+      <div class="researchersection1">
           <center>
           <h1>Parintek Innovations Helps Researchers</h1>
           <br/>
           <h3>WITH FULL IP SUPPORT</h3>
           </center>
-          <a href="#researchSection2"> <div class="encircle bounce animated" style={{marginTop:'170px'}}>
-  <div class="arrow">
-  </div>
-</div>  </a>
+          
       </div>
-      
-      <div id="researchSection2">
+      </div>
+     
+      <div class="carousel-item">
       <section id="cards-columns">
-	        <div class="container  pt-3 mb-5 pb-5">
+	        <div class="container pt-2 pb-5">
 		          <div class="row">
                   <div class="col-lg-3 col-md-6 col-sm-6 my-2 d-flex align-items-stretch">
                         <div class="card">
@@ -82,14 +83,21 @@ class Researchers extends React.Component{
            modalOpen={this.state.modalOpen}
            handleModalOpen={this.handleModalOpen}/>
 	            </div>
-                <a href="#section7"> <div class="encircle bounce animated">
-  <div class="arrow">
-  </div>
-</div>  </a>
+               
 		      </div>
             
       </section>
       </div>
+	</div>
+  <a class="carousel-control-prev" href="#carousel" role="button" data-slide="prev">
+    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+    <span class="sr-only">Previous</span>
+  </a>
+  <a class="carousel-control-next" href="#carousel" role="button" data-slide="next">
+    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+    <span class="sr-only">Next</span>
+  </a>
+</div>
 </>
    )
 }

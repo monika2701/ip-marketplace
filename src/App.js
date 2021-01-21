@@ -6,11 +6,11 @@ import Students from './components/StudentsComponent';
 import Researchers from './components/ResearcherspageComponents/ResearchComponent';
 import Startups from './components/StartupspageComponents/StartupComponent';
 import Corporates from './components/CorporatespageComponents/CorporatesComponent';
-import Contact from './components/ContactComponents/ContactpageComponents';
+import Contact from './components/ContactpageComponents/Contacts';
 import Faq from './components/FaqpageComponents/FaqComponents';
-import Iconbar from './components/IconbarComponent';
 import SignIn from './components/SignInComponent';
 import SignUp from './components/SignUpComponent';
+import Overlay from './components/OverlayComponent';
 import { BrowserRouter } from 'react-router-dom';
 import { Switch, Route, Redirect } from 'react-router-dom';
 import './App.css'; 
@@ -23,8 +23,7 @@ class App extends Component {
       <div className="App">
         
         <Header />
-        <Iconbar />
-       
+        <Overlay />
         <Switch>
               <Route path='/home' component={Home} /> 
               <Route path='/students' component={Students} />

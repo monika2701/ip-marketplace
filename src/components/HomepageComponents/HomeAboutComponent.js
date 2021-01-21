@@ -4,7 +4,8 @@ import React from 'react';
 function HomeAbout(props) {
     
    return (
-     <div id="section2">
+     
+    <div className="homesection2">
     <div class="container">
          <div class="about"> 
        <div class="row">
@@ -23,18 +24,12 @@ function HomeAbout(props) {
           of your intellectual property.The benefits of the platform are one too many so our advice is to 
           explore IP MarketPlace but do remember Parintek is always there to help you with your IP needs.</p>
           </div>
+    </div>
          
-
-         {/*  <a class="ct-btn-scroll pt-5" href="#section3"><img alt="Arrow Down Icon" src="assets/13.png"/></a> */}
-          </div>
-          <a href="#section3"> <div class="encircle bounce animated" style={{ border: 'solid 2px #181277'}}>
-  <div class="arrow">
-  </div>
-</div>  </a>
     </div> 
     
-    </div>
-    </div>
+  </div>
+  </div>
 )
 }
 

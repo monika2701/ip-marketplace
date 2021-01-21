@@ -9,7 +9,7 @@ function Header(props) {
                     <Navbar className="navbar-custom mr-auto" expand="lg" variant="dark" sticky="top">
                     <Navbar.Brand className="mr-auto">
                         <img
-                            src="/logo1.png"
+                            src="assets/logo1.png"
                             width="400"
                             height="70"
                             className="d-inline-block align-top"
