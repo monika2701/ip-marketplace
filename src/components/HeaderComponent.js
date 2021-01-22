@@ -73,7 +73,16 @@ function Header(props) {
                         <span class="caption"><Link to="/signup" style={{color: 'white', textDecoration: 'none'}}>SignUp</Link></span>
                         </div>
                     </NavItem>
-                </Nav>
+                     {/*  <NavItem>
+                        <ul class="nav ml-4 mt-2">
+                        <li class="dropdown"><a href="#" class="dropdown-toggle" data-toggle="dropdown" style={{color: 'yellow'}}>Hello, User</a>
+                            <ul class="dropdown-menu" style={{minWidth: '100px'}}>
+                                <li><a href="">&nbsp;<i class="fa fa-power-off"></i>&nbsp;&nbsp;Logout</a></li>
+                            </ul>
+                        </li>
+                        </ul>
+                     </NavItem> */}
+             </Nav>
             </Navbar.Collapse>
         </Navbar>
    

@@ -31,33 +31,63 @@ class Overlay extends Component {
             <div class="curtain"></div>
             <div class="curtain"></div>
             <div class="curtain-menu-wrapper">
-            <div class="row justify-content-center mt-5"><h4 style={{color:'white',fontWeight:'bold'}}>Find Us</h4></div>
+              <div class="container">
+            <div class="row justify-content-center mt-2"><h4 style={{color:'white',fontWeight:'bold'}}>Find Us</h4></div>
             
-                <div class="row">
+                <div class="row mt-3">
             
-                    <div class="col-md-6 sm-12">
-              <ul class="curtain-menu-list menu vertical">
-                <li> US</li>
-                <li>Parintek Innovations Inc. 764 Southcross Dr W, #202, Burnsville, MN 55306, USA</li>
-                <li>+1-202-318-0199</li>
-                <li>info@parintek.com</li>
-                  
-              </ul>
-              </div>
-              <div class="col-md-6 sm-12">
-              <ul class="curtain-menu-list menu vertical">
-                <li>India</li>
-                <li>UNIT 501A , Tower B, Ithum IT Park, A-40, sector 62, NOIDA , UP Noida, Uttar Pradesh - 201309.</li>
-                <li>+918076510108</li>
-                <li>info@parintek.com</li>
-                  
-              </ul>
-              </div>
-              </div>
-                  
-                
+                <div class="col-md-6">  
+                <h4 style={{color:'white',fontWeight:'bold'}}>US Office</h4>
+                      <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d2834.056896744269!2d-93.28908100000001!3d44.738856!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x9d3cdfa52cc32ed0!2sParintek%20Innovation%20Inc!5e0!3m2!1sen!2sin!4v1611223236675!5m2!1sen!2sin&z=15"
+                      style={{width:"530px", height:"200px",border:"0"}} frameBorder="0" allowFullScreen=""></iframe>
+                </div>
+                <div class="col-md-6">  
+                <h4 style={{color:'white',fontWeight:'bold',textAlign:"right"}}>India Office</h4>
+                      <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d5415.192590039215!2d77.36251876201543!3d28.623681665277996!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x390cef7c00000001%3A0x956090dacabf499d!2sParintek%20Innovation%20Pvt%20Ltd!5e0!3m2!1sen!2sin!4v1611226728834!5m2!1sen!2sin"
+                      style={{width:"540px", height:"200px",border:"0"}} frameBorder="0" allowFullScreen=""></iframe>
+                </div>
+              </div> 
+
+            <div class="row">
+          
+            
+                <div class="col-md-6" style={{color:'white'}}>
+                <div>
+                <i class="fa fa-map-marker"></i>
+                <span>&nbsp;&nbsp;Parintek Innovations Inc. <br/>&nbsp;&nbsp;&nbsp;&nbsp;764 Southcross Dr W, #202<br/>&nbsp;&nbsp;&nbsp; Burnsville, MN 55306, USA</span>
+                </div>
+                <div class="mt-3">
+                <i class="fa fa-phone"></i>
+                <span>&nbsp;&nbsp;+1-202-318-0199</span>
+                </div>
+                <div class="mt-3">
+                <i class="fa fa-envelope"></i>
+                <span>&nbsp;&nbsp;info@parintek.com</span>
+                </div>
+
+                </div>
+                <div class="col-md-6" style={{color:'white'}}>
+                <div>
+                <i class="fa fa-map-marker"></i>
+                <span>&nbsp;&nbsp;UNIT 501A , Tower B <br/>&nbsp;&nbsp;&nbsp;&nbsp;Ithum IT Park, A-40<br/>&nbsp;&nbsp;&nbsp;&nbsp;sector 62, NOIDA , UP</span>
+                </div>
+                <div class="mt-3">
+                <i class="fa fa-phone"></i>
+                <span>&nbsp;&nbsp;+918076510108</span>
+                </div>
+                <div class="mt-3">
+                <i class="fa fa-envelope"></i>
+                <span>&nbsp;&nbsp;info@parintek.com</span>
+                </div>
+                </div>
+
             </div>
-          </div>		
+
+
+
+            </div>
+          </div>	
+          </div>	
           </>    
         );
     }

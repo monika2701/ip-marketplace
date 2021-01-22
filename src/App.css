@@ -31,8 +31,7 @@ img{
 
 .curtain-menu-wrapper {
   /* display: flex; */
-  justify-content: center;
-  align-items: center;
+  
   position: absolute;
   height: 100vh;
   width: 100vw;
@@ -62,15 +61,6 @@ img{
 .curtain-menu-wrapper .curtain-menu-list li {
   color:white; }
 
-/* .curtain-menu-wrapper .curtain-menu-list li:hover a {
-  color: #624ae9; } */
-
-/* .curtain-menu-wrapper .curtain-menu-list li a {
-  color: #fefefe;
-  text-decoration: none;
-  -webkit-justify-content: center;
-  -ms-flex-pack: center;
-  justify-content: center; } */
 
 .curtain-menu .curtain {
   -webkit-flex: 1;
