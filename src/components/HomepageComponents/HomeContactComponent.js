@@ -42,7 +42,7 @@ class HomeContact extends Component {
           
             <div className="row">
                 <div className="col-md-6">
-                    <img src="assets/8.png" style={{position:'relative',top:'-8px',textAlign:'center'}}/> 
+                    <img src="assets/8.png" style={{position:'relative',top:'-8px',textAlign:'center'}} alt=""/> 
                 </div>
 
                 <div className="col-md-6">

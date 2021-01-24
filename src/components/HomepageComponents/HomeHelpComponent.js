@@ -16,7 +16,7 @@ class HomeHelp extends React.Component{
     }
   
     render(){  
-   return (
+    return (
     
     <div className="homesection3">
     <section id="home">
@@ -36,8 +36,8 @@ class HomeHelp extends React.Component{
                       <li><Link to="/students" className="Nav_link">Idea Support</Link></li>
                       <li><a onClick={this.handleModalOpen}  style={{cursor: 'pointer'}} >Submit Idea for Evaluation</a></li>
                       <ClickModal
-           modalOpen={this.state.modalOpen}
-           handleModalOpen={this.handleModalOpen}/>
+                        modalOpen={this.state.modalOpen}
+                        handleModalOpen={this.handleModalOpen}/>
                       <li><a href="https://www.parintek.com/book/"  style={{color: 'white', textDecoration: 'none'}}>Learn About Patent</a></li>
                       <li><a href="https://www.parintek.com/career.php" style={{color: 'white', textDecoration: 'none'}}>Career Support in IP</a></li>
                     </ul>

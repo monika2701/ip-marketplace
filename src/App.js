@@ -11,11 +11,15 @@ import Faq from './components/FaqpageComponents/FaqComponents';
 import SignIn from './components/SignInComponent';
 import SignUp from './components/SignUpComponent';
 import Overlay from './components/OverlayComponent';
-import { BrowserRouter } from 'react-router-dom';
+import ServiceEnquiry from './components/ServiceEnquiryComponent';
+import { BrowserRouter} from 'react-router-dom';
 import { Switch, Route, Redirect } from 'react-router-dom';
 import './App.css'; 
 
 class App extends Component {
+ constructor(){
+   super();
+ }
  
   render() {
     return (
@@ -34,6 +38,7 @@ class App extends Component {
               <Route path='/faq' component={Faq} />
               <Route path='/signin' component={SignIn} />
               <Route path='/signup' component={SignUp} />
+              <Route path='/serviceEnquiry' component={ServiceEnquiry} />
               <Redirect to="/home" />
           </Switch>
 

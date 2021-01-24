@@ -1,5 +1,5 @@
 import React from 'react';
-import {Modal,Button,dialogClassName} from 'react-bootstrap';
+import {Modal} from 'react-bootstrap';
 import { Link } from 'react-router-dom';
 
 
@@ -21,7 +21,7 @@ const ClickModal = (props) => {
               <Modal.Footer>
                  <button onClick={props.handleModalOpen} className="modalbtn1 bg-danger">I don't Agree
                  </button>
-                 <button className="modalbtn2 bg-success"><Link to="/signin" className="Nav_link">I Agree</Link></button>
+                 <button className="modalbtn2 bg-success"><Link to="/serviceEnquiry" className="Nav_link">I Agree</Link></button>
                 
               </Modal.Footer>
           </Modal>

@@ -38,7 +38,7 @@ class Corporates extends React.Component{
 		<div className="row">
           <div className="col-lg-4 col-md-6 col-sm-6 my-2">
                 <div className="card">
-                <img className="card-img-top" src="https://i.pinimg.com/564x/c8/a3/76/c8a376d9ae4a2005d5ce5f33dc327bbc.jpg" alt="Card image cap" style={{height:'200px'}}/>
+                <img className="card-img-top" src="https://i.pinimg.com/564x/c8/a3/76/c8a376d9ae4a2005d5ce5f33dc327bbc.jpg"  style={{height:'200px'}} alt=""/>
                     <div className="card-body">
                           <h5 className="card-title"><div class="text-center">IP Consultation</div> </h5>
                           <p className="card-text text-center">How To Get Patent ?</p>
@@ -49,7 +49,7 @@ class Corporates extends React.Component{
 			
 			    <div className="col-lg-4 col-md-6 col-sm-6 my-2">
                   <div className="card">
-                  <img className="card-img-top" src="https://i.pinimg.com/564x/c8/a3/76/c8a376d9ae4a2005d5ce5f33dc327bbc.jpg" alt="Card image cap" style={{height:'200px'}}/>
+                  <img className="card-img-top" src="https://i.pinimg.com/564x/c8/a3/76/c8a376d9ae4a2005d5ce5f33dc327bbc.jpg" style={{height:'200px'}} alt=""/>
                       <div className="card-body">
                             <h5 className="card-title"><div class="text-center">Innovation Management Services</div> </h5>
                             <p className="card-text text-center">Want a Idea Management Tool?</p>
@@ -60,7 +60,7 @@ class Corporates extends React.Component{
 			
 			    <div className="col-lg-4 col-md-6 col-sm-6 my-2">
                   <div className="card">
-                  <img className="card-img-top" src="https://i.pinimg.com/564x/c8/a3/76/c8a376d9ae4a2005d5ce5f33dc327bbc.jpg" alt="Card image cap" style={{height:'200px'}}/>
+                  <img className="card-img-top" src="https://i.pinimg.com/564x/c8/a3/76/c8a376d9ae4a2005d5ce5f33dc327bbc.jpg"  style={{height:'200px'}} alt=""/>
                       <div className="card-body">
                           <h5 className="card-title"><div class="text-center">IP Services Support</div> </h5>
                           <p className="card-text text-center">Get IPR Services For Your Invention</p>

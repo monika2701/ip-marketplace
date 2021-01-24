@@ -16,7 +16,7 @@ function Footer(props) {
                                         <li><a href="https://www.facebook.com/parintekinno/?modal=admin_todo_tour"><span class="fa fa-facebook-square"></span></a></li>						
                                         <li><a href="https://twitter.com/ParintekIn"><span class="fa fa-twitter-square"></span></a></li>
                                         <li><a href="https://www.linkedin.com/company/Parintek"><span class="fa fa-linkedin-square"></span></a></li>
-                                        <li><a href="#"><span class="fa fa-youtube-square"></span></a></li>
+                                        <li><a href="https://www.youtube.com/channel/UCVTbM3GEBivXS1kESo__pow"><span class="fa fa-youtube-square"></span></a></li>
                                         
                                     </ul>							
                                 </div> 

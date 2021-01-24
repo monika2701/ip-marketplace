@@ -1,13 +1,28 @@
 import React,{Component} from 'react';
+import $ from 'jquery';
+import {Redirect} from 'react-router-dom';
 
 class ServiceEnquiry extends Component {
   constructor(props) {
     super(props);
-    this.state = {};
-    
+    this.state = {
+      redirect:false
+    }
+    this.logout=this.logout.bind(this);
     this.handleSubmit = this.handleSubmit.bind(this);
   }
-
+  componentWillMount(){
+    if(sessionStorage.getItem("userData")){
+      console.log("Call user feed");
+    }
+    else{
+      this.setState({redirect: true});
+    }
+  }
+  logout(){
+    sessionStorage.setItem("userData",'');
+    sessionStorage.clear();
+  }
   componentDidMount(){
     $(function() {
       $('#termsChkbx').on("click",function() {
@@ -33,6 +48,9 @@ class ServiceEnquiry extends Component {
 
 
   render(){
+    if(this.state.redirect){
+      return(<Redirect to={'/signin'}/>)
+    }
     return(
     <>
     
@@ -42,7 +60,7 @@ class ServiceEnquiry extends Component {
 <div class="container">
 	
   <form>
-  <div class="form-row mb-5">
+  <div class="form-row mb-2">
     <div class="form-group col-md-5">
       <label id="design">Who are you?(Profession)<span class="star">*</span></label>
        <select class="custom-select mr-sm-2" id="inlineFormCustomSelect" required>
@@ -61,21 +79,21 @@ class ServiceEnquiry extends Component {
         <option value="1">Idea Evaluation</option>
         <option value="2">Idea Patent Filing</option>
         <option value="3">Idea Consultation</option>
-		<option value="4">Career Support</option>
-		<option value="5">Idea Funding</option>
-		<option value="6">Patent Analyst</option>
-		<option value="7">Pre Filing Search</option>
-		<option value="8">Full IP Service</option>
-		<option value="9">Idea Management Portal</option>
-		<option value="10">Office Action</option>
-		<option value="11">Copyrights</option>
-		<option value="12">Trademark</option>
-		<option value="13">Business Incorporation</option>
+        <option value="4">Career Support</option>
+        <option value="5">Idea Funding</option>
+        <option value="6">Patent Analyst</option>
+        <option value="7">Pre Filing Search</option>
+        <option value="8">Full IP Service</option>
+        <option value="9">Idea Management Portal</option>
+        <option value="10">Office Action</option>
+        <option value="11">Copyrights</option>
+        <option value="12">Trademark</option>
+        <option value="13">Business Incorporation</option>
       </select>
     </div>
   </div>
 
-  <div class="form-row mb-5">
+  <div class="form-row mb-2">
     <div class="form-group col-md-5">
       <label id="design">Name of your Company/Organisation/Institute<span class="star">*</span></label>
       <input type="text" class="form-control" placeholder="Name of Your Institute" required/>
@@ -91,7 +109,7 @@ class ServiceEnquiry extends Component {
     <label id="design">Message<span class="star">*</span></label>
     <textarea class="form-control" id="FormControlTextarea" rows="3" required></textarea>
   </div>
-  <div class="form-group mb-4">
+  <div class="form-group mb-2">
     <div class="form-check">
       <input class="form-check-input" type="checkbox" id="termsChkbx"/>
       <label id="design" for="gridCheck">
@@ -100,7 +118,7 @@ class ServiceEnquiry extends Component {
     </div>
   </div>
   <button type="submit" class="button1" id="sub1" disabled="disabled">Submit</button>
-  
+  <button type="button" className="button" onClick={this.logout}>Logout</button>
   
 </form>
 </div>
