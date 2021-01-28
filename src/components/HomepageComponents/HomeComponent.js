@@ -8,7 +8,9 @@ import HomeContact from './HomeContactComponent';
 import HomeAbout from './HomeAboutComponent';
 
 
-
+/* setTimeout(function(){
+  window.location.reload();
+}, 60000); */
 class Home extends Component{
 render(){
     return (

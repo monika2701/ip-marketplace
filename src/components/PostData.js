@@ -1,5 +1,5 @@
 export default function PostData(type, userData) {
-    let BaseURL = 'https://marketplace.parintekinnovation.com/api/user.php?method=login';;
+    let BaseURL = 'https://marketplace.parintekinnovation.com/api/user.php?method=';
     
     return new Promise((resolve, reject) =>{
     fetch(BaseURL+type, {

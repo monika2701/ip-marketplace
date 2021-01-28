@@ -1,61 +1,21 @@
-import React,{Component} from 'react';
+import React  from 'react';
 import $ from 'jquery';
+import Login from './SignInComponent';
 import {Redirect} from 'react-router-dom';
 
-class ServiceEnquiry extends Component {
-  constructor(props) {
-    super(props);
-    this.state = {
-      redirect:false
-    }
-    this.logout=this.logout.bind(this);
-    this.handleSubmit = this.handleSubmit.bind(this);
-  }
-  componentWillMount(){
-    if(sessionStorage.getItem("userData")){
-      console.log("Call user feed");
-    }
-    else{
-      this.setState({redirect: true});
-    }
-  }
-  logout(){
-    sessionStorage.setItem("userData",'');
-    sessionStorage.clear();
-  }
-  componentDidMount(){
-    $(function() {
-      $('#termsChkbx').on("click",function() {
-        if ($(this).is(':checked')) {
-          $('#sub1').removeAttr('disabled');
-        } else {
-          $('#sub1').attr('disabled', 'disabled');
-        }
-      });
-    });
-  }
-
-  handleSubmit(event) {
-    event.preventDefault();
-    alert('You have submitted the form.')
-    const data = new FormData(event.target);
-    
-    fetch('/api/form-submit-url', {
-      method: 'POST',
-      body: data,
-    });
-  } 
 
 
-  render(){
-    if(this.state.redirect){
-      return(<Redirect to={'/signin'}/>)
-    }
+
+function ServiceEnquiry() {
+  
+  if(!localStorage.getItem('token')) {
+    return <Redirect to={'/login'}/>
+  }
     return(
     <>
     
 <div class="enquiry">
-<h2>Service Enquiry Form</h2>
+<h2>Service Enquiry Form</h2> 
 </div>
 <div class="container">
 	
@@ -118,7 +78,7 @@ class ServiceEnquiry extends Component {
     </div>
   </div>
   <button type="submit" class="button1" id="sub1" disabled="disabled">Submit</button>
-  <button type="button" className="button" onClick={this.logout}>Logout</button>
+ 
   
 </form>
 </div>
@@ -127,6 +87,6 @@ class ServiceEnquiry extends Component {
 </>
 )
 }
-}
+
 
 export default ServiceEnquiry;

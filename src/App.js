@@ -8,7 +8,7 @@ import Startups from './components/StartupspageComponents/StartupComponent';
 import Corporates from './components/CorporatespageComponents/CorporatesComponent';
 import Contact from './components/ContactpageComponents/Contacts';
 import Faq from './components/FaqpageComponents/FaqComponents';
-import SignIn from './components/SignInComponent';
+import Login from './components/SignInComponent';
 import SignUp from './components/SignUpComponent';
 import Overlay from './components/OverlayComponent';
 import ServiceEnquiry from './components/ServiceEnquiryComponent';
@@ -36,7 +36,7 @@ class App extends Component {
               <Route path='/corporates' component={Corporates} />
               <Route path='/contacts' component={Contact} />
               <Route path='/faq' component={Faq} />
-              <Route path='/signin' component={SignIn} />
+              <Route path='/login' component={Login} />
               <Route path='/signup' component={SignUp} />
               <Route path='/serviceEnquiry' component={ServiceEnquiry} />
               <Redirect to="/home" />

@@ -54,7 +54,7 @@ class HomeHelp extends React.Component{
                   <div className="option">
                     <ul>
                       <li><Link to="/startups" className="Nav_link">Patent Filing</Link></li>
-                      <li><Link to="/signin" className="Nav_link">Request for Consultation</Link></li>
+                      <li><Link to="/serviceEnquiry" className="Nav_link">Request for Consultation</Link></li>
                       <li><a href="https://www.parintek.com/services.php"  style={{color: 'white', textDecoration: 'none'}}>IPR Services</a></li>
                     </ul>
                   </div>
@@ -69,9 +69,9 @@ class HomeHelp extends React.Component{
                   </div>
                   <div className="option">
                     <ul>
-                      <li><Link to="/signin" className="Nav_link">Request for Consultation</Link></li>
+                      <li><Link to="/serviceEnquiry" className="Nav_link">Request for Consultation</Link></li>
                       <li><Link to="/researchers" className="Nav_link">Idea Support</Link></li>
-                      <li><Link to="/signin" className="Nav_link">Request for Fund to support your Innovation</Link></li>
+                      <li><Link to="/serviceEnquiry" className="Nav_link">Request for Fund to support your Innovation</Link></li>
                     </ul>
                   </div>
                 </div>
@@ -85,8 +85,8 @@ class HomeHelp extends React.Component{
                     </div>
                     <div className="option">
                       <ul>
-                      <li><Link to="/signin" className="Nav_link">Request for Consultation</Link></li>
-                        <li><Link to="/signin" className="Nav_link">Patentability Search</Link></li>
+                      <li><Link to="/serviceEnquiry" className="Nav_link">Request for Consultation</Link></li>
+                        <li><Link to="/serviceEnquiry" className="Nav_link">Patentability Search</Link></li>
                         <li><a href="https://marketplace.parintekinnovation.com/invention-management-tool" style={{color: 'white', textDecoration: 'none'}}>Invention Management Tool</a></li>
                         <li><a href="https://www.parintek.com/services.php" style={{color: 'white', textDecoration: 'none'}}>IPR Services</a></li>
                       </ul>
