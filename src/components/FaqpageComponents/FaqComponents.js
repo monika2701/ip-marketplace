@@ -1,6 +1,6 @@
 import React from 'react';
 
-function Faq(props) {
+function Faq() {
     return(
      <>
 
@@ -17,7 +17,7 @@ function Faq(props) {
 
        <div class="carousel-item">
         <section className="accordion-section clearfix mt-5">
-        <div className="container pt-5">
+        <div className="container mb-5 pb-5 pt-5">
         
             <div className="panel-group" id="accordion" role="tablist" aria-multiselectable="true">
               <div className="panel panel-default">

@@ -9,6 +9,7 @@ export default class SignUp extends Component {
         name:'',
         email: '',
         password: '',
+        confirmPassword: '',
         redirect: false,
         authError: false,
         isLoading: false,
@@ -32,7 +33,7 @@ export default class SignUp extends Component {
         const name = this.state.name;
         const email = this.state.email;
         const password = this.state.password;
-      /*   const confirmpassword = this.state.confirmpassword; */
+       
         let bodyFormData = new FormData();
         bodyFormData.set('name', name);
         bodyFormData.set('email', email);
@@ -57,6 +58,7 @@ export default class SignUp extends Component {
                     
                     this.setState({redirect: true, isLoading: false});
                     localStorage.setItem('isLoggedIn', true);
+                    localStorage.setItem('username', JSON.stringify(js.full_name));
                 }
             })
             .catch(error => {
@@ -120,6 +122,19 @@ export default class SignUp extends Component {
                                     </div>
                                 
                             </div>
+                            <div className="form-group">
+                            <div class="input-group mb-4">
+                                <div class="input-group-prepend">
+                                <div class="input-group-text"><i class="fa fa-lock"></i></div>
+                                </div>
+                                    <input type="password" className={"form-control " + (this.state.authError ? 'is-invalid' : '')} id="inputPassword" placeholder="Confirm Password" name="confirmPassword" onChange={this.handlePwdChange} required/>
+                                </div>    
+                                    <div className="invalid-feedback">
+                                        Please provide a valid Password.
+                                    </div>
+                                
+                            </div>
+                           
                            
                             <div className="form-group">
                                 <button className="btn btn-primary btn-block" type="submit" disabled={this.state.isLoading ? true : false}>Sign Up &nbsp;&nbsp;&nbsp;

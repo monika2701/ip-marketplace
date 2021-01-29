@@ -38,7 +38,7 @@ class Researchers extends React.Component{
 		          <div class="row">
                   <div class="col-lg-3 col-md-6 col-sm-6 my-2 d-flex align-items-stretch">
                         <div class="card">
-                        <img class="card-img-top" src="https://i.pinimg.com/564x/4e/1f/eb/4e1feb9123d1322fe7b8585d26f4a737.jpg" alt=""/>
+                        <img class="card-img-top" src="assets/research.jpg" alt=""/>
                             <div class="card-body">
                                 <h5 class="card-title"><div class="text-center">Free Confidential Idea Evaluation</div> </h5>
                                 <p class="card-text text-center">How To Get Patent for Free?</p><br/>
@@ -49,7 +49,7 @@ class Researchers extends React.Component{
                   
                   <div class="col-lg-3 col-md-6 col-sm-6 my-2 d-flex align-items-stretch">
                         <div class="card">
-                        <img class="card-img-top" src="https://i.pinimg.com/564x/4e/1f/eb/4e1feb9123d1322fe7b8585d26f4a737.jpg" alt=""/>
+                        <img class="card-img-top" src="assets/research.jpg" alt=""/>
                             <div class="card-body">
                                 <h5 class="card-title"><div class="text-center">Idea Patent</div> </h5>
                                 <p class="card-text text-center">Do You Want To Get Patent For Your Invention</p><br/>
@@ -60,7 +60,7 @@ class Researchers extends React.Component{
 			
                   <div class="col-lg-3 col-md-6 col-sm-6 my-2 d-flex align-items-stretch">
                       <div class="card">
-                      <img class="card-img-top" src="https://i.pinimg.com/564x/4e/1f/eb/4e1feb9123d1322fe7b8585d26f4a737.jpg" alt=""/>
+                      <img class="card-img-top" src="assets/research.jpg" alt=""/>
                           <div class="card-body">
                               <h5 class="card-title"><div class="text-center">Free Patent Consultation</div> </h5>
                               <p class="card-text text-center">Get Fund For An Invention</p><br/>
@@ -71,7 +71,7 @@ class Researchers extends React.Component{
                   
                   <div class="col-lg-3 col-md-6 col-sm-6 my-2 d-flex align-items-stretch">
                       <div class="card">
-                      <img class="card-img-top" src="https://i.pinimg.com/564x/4e/1f/eb/4e1feb9123d1322fe7b8585d26f4a737.jpg" alt=""/>
+                      <img class="card-img-top" src="assets/research.jpg" alt=""/>
                           <div class="card-body">
                               <h5 class="card-title"><div class="text-center">Funding For Patent</div> </h5>
                               <p class="card-text text-center">Need Funds For Your Invention? Get Funds To Support Your Project</p>

@@ -37,7 +37,7 @@ class Startups extends React.Component{
 		        <div className="row">
                 <div className="col-lg-3 col-md-6 col-sm-6 my-2 d-flex align-items-stretch">
                     <div className="card">
-                    <img className="card-img-top" src="https://i.pinimg.com/564x/97/d4/f4/97d4f462a21a628219cf8239680507de.jpg" alt=""/>
+                    <img className="card-img-top" src="assets/startup.jpg" alt=""/>
                         <div className="card-body">
                             <h5 className="card-title"><div className="text-center">IP Consultation</div> </h5>
                             <p className="card-text text-center">How To Get Patent ?</p><br/>
@@ -48,7 +48,7 @@ class Startups extends React.Component{
                 
                 <div className="col-lg-3 col-md-6 col-sm-6 my-2 d-flex align-items-stretch">
                     <div className="card">
-                    <img className="card-img-top" src="https://i.pinimg.com/564x/97/d4/f4/97d4f462a21a628219cf8239680507de.jpg" alt=""/>
+                    <img className="card-img-top" src="assets/startup.jpg" alt=""/>
                         <div className="card-body">
                             <h5 className="card-title"><div className="text-center">Patent Filing</div> </h5>
                             <p className="card-text text-center">Do You Want To Get Patent For Your Invention</p>
@@ -59,7 +59,7 @@ class Startups extends React.Component{
 			
                 <div className="col-lg-3 col-md-6 col-sm-6 my-2 d-flex align-items-stretch">
                     <div className="card">
-                    <img className="card-img-top" src="https://i.pinimg.com/564x/97/d4/f4/97d4f462a21a628219cf8239680507de.jpg" alt=""/>
+                    <img className="card-img-top" src="assets/startup.jpg" alt=""/>
                         <div className="card-body">
                             <h5 className="card-title"><div className="text-center">IP Services Support</div> </h5>
                             <p className="card-text text-center">Get IPR Services For Your Invention</p>
@@ -70,7 +70,7 @@ class Startups extends React.Component{
 			
                 <div className="col-lg-3 col-md-6 col-sm-6 my-2 d-flex align-items-stretch">
                     <div className="card">
-                    <img className="card-img-top" src="https://i.pinimg.com/564x/97/d4/f4/97d4f462a21a628219cf8239680507de.jpg" alt=""/>
+                    <img className="card-img-top" src="assets/startup.jpg" alt=""/>
                         <div className="card-body">
                             <h5 className="card-title"><div className="text-center">Novelty Verification</div> </h5>
                             <p className="card-text text-center">Check Is Your Idea Patentable?</p>

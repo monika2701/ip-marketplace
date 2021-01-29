@@ -38,7 +38,7 @@ export default class Login extends Component {
           headers:{
             'Content-Type':'application/json'
           }
-        })
+        }) 
         
             .then(result => {
              console.log(result.data);
@@ -74,21 +74,22 @@ export default class Login extends Component {
             
             <div className="container">
               
-              <div class="login-form mt-3 pt-5">
+              <div class="login-form mt-5 pt-5">
                 
                         <form onSubmit={this.handleSubmit}>
                         <h2 class="text-center">Sign in</h2>		
-                        <div class="text-center social-btn">
+                      {/*   <div class="text-center social-btn">
                             <a href="#" class="btn btn-primary btn-block"><i class="fa fa-facebook"></i> Sign in with <b>Facebook</b></a>
                             <a href="#" class="btn btn-danger btn-block"><i class="fa fa-google"></i> Sign in with <b>Google</b></a>
-                        </div>
+                        </div> */}
                             <div className="form-group">
+                                
                             <div class="input-group mt-3 mb-4">
                                 <div class="input-group-prepend">
                                 <div class="input-group-text"><i class="fa fa-user"></i></div>
                                 </div>
                                     
-                                    <input className={"form-control " + (this.state.authError ? 'is-invalid' : '')} id="inputEmail" placeholder="Email address" type="text" name="email" onChange={this.handleEmailChange} autoFocus required/>
+                                    <input className={"form-control " + (this.state.authError ? 'is-invalid' : '')} id="inputEmail" placeholder="Email address" type="email" name="email" onChange={this.handleEmailChange} autoFocus required/>
                                     </div>
                                     <div className="invalid-feedback">
                                         Please provide a valid Email.

@@ -1,7 +1,7 @@
 import React from 'react';
 
 
-function HomeAbout(props) {
+function HomeAbout() {
     
    return (
      
@@ -19,7 +19,8 @@ function HomeAbout(props) {
           intellectual property services can be even fulfilled at this marketplace.Apart from the business 
           context of intellectual property the Marketplace offers the Students to learn the in and outs of 
           intellectual property and build a career as well. As for the researcher’s, funds to support their 
-          innovation can even be generated through this platform.</p> <p>The platform offers a plethora of IP 
+          innovation can even be generated through this platform.</p> 
+          <p>The platform offers a plethora of IP 
           Professionals, Law Firms and Consulting Firms who can provide all the needed support for the protection 
           of your intellectual property.The benefits of the platform are one too many so our advice is to 
           explore IP MarketPlace but do remember Parintek is always there to help you with your IP needs.</p>

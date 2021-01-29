@@ -2,7 +2,7 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 
 
-function HomeServices(props) {
+function HomeServices() {
     
    return (
      
@@ -18,7 +18,7 @@ function HomeServices(props) {
                         <div className="services-content__icon">
                           <i class="fa fa-book"></i>
                         </div>
-                        <div className="services-content__title"><Link to="/signin" className="Nav_link">
+                        <div className="services-content__title"><Link to="/serviceEnquiry" className="Nav_link">
                           File a Patent</Link>
                         </div>
                     </a>
@@ -28,7 +28,7 @@ function HomeServices(props) {
                         <div className="services-content__icon">
                           <i className="fa fa-building-o"></i>
                         </div>
-                        <div className="services-content__title"><Link to="/signin" className="Nav_link">
+                        <div className="services-content__title"><Link to="/serviceEnquiry" className="Nav_link">
                           Office Action</Link>
                         </div>
                     </a>
@@ -38,7 +38,7 @@ function HomeServices(props) {
                         <div className="services-content__icon">
                           <i class="fa fa-copyright fa-4x"></i>
                         </div>
-                        <div className="services-content__title"><Link to="/signin" className="Nav_link">
+                        <div className="services-content__title"><Link to="/serviceEnquiry" className="Nav_link">
                           Copyrights</Link>
                         </div>  
                     </a>
@@ -48,7 +48,7 @@ function HomeServices(props) {
                         <div className="services-content__icon">
                           <i class="fa fa-trademark"></i>
                         </div>
-                        <div className="services-content__title"><Link to="/signin" className="Nav_link">
+                        <div className="services-content__title"><Link to="/serviceEnquiry" className="Nav_link">
                           Trademarks</Link>
                         </div>
                     </a>
@@ -61,7 +61,7 @@ function HomeServices(props) {
                         <div className="services-content__icon">
                           <i class="fa fa-usd"></i>
                         </div>
-                        <div className="services-content__title"><Link to="/signin" className="Nav_link">
+                        <div className="services-content__title"><Link to="/serviceEnquiry" className="Nav_link">
                           Get Funds</Link>
                         </div>
                     </a>
@@ -71,7 +71,7 @@ function HomeServices(props) {
                         <div className="services-content__icon">
                           <i class="fa fa-black-tie"></i>
                         </div>
-                        <div className="services-content__title"><Link to="/signin" className="Nav_link">
+                        <div className="services-content__title"><Link to="/serviceEnquiry" className="Nav_link">
                           Business Incorporation</Link>
                         </div>
                     </a>
@@ -81,7 +81,7 @@ function HomeServices(props) {
                         <div className="services-content__icon">
                           <i class="fa fa-wrench"></i>
                         </div>
-                        <div className="services-content__title"><Link to="/signin" className="Nav_link">
+                        <div className="services-content__title"><Link to="/serviceEnquiry"  className="Nav_link">
                           IPR Services</Link>
                         </div>
                     </a>

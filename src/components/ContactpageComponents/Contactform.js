@@ -97,7 +97,7 @@ class ContactForm extends Component {
               </form>
             </div> 
             <div className="col-md-6">
-            <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d2834.056896744269!2d-93.28908100000001!3d44.738856!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x9d3cdfa52cc32ed0!2sParintek%20Innovation%20Inc!5e0!3m2!1sen!2sin!4v1611223236675!5m2!1sen!2sin&z=15"
+            <iframe title="Map" src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d2834.056896744269!2d-93.28908100000001!3d44.738856!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x9d3cdfa52cc32ed0!2sParintek%20Innovation%20Inc!5e0!3m2!1sen!2sin!4v1611223236675!5m2!1sen!2sin&z=15"
                       style={{width:"530px", height:"350px",border:"0"}} frameBorder="0" allowFullScreen=""></iframe>
             </div>
           </div> 

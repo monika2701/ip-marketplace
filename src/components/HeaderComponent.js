@@ -1,31 +1,46 @@
 import React, { Component } from 'react';
 import { Nav, Navbar,NavItem } from 'react-bootstrap';
-import { NavLink,Link,Redirect } from 'react-router-dom';
+import { NavLink,Link} from 'react-router-dom';
 import axios from 'axios';
 
 
-
+/* setTimeout(function(){
+    window.location.reload();
+  }, 15000);
+ */
+  
 export default class Header extends Component {
+    constructor(props) {
+        super(props);
+        this.handleLogout = this.handleLogout.bind(this)
+    }
 
     handleLogout = event => {
-        event.preventDefault();
     
-        axios.post('https://marketplace.parintekinnovation.com/api/user.php?method=logout')
-        .then(() => {
-           
-        })
-        .catch(error => {
-            console.log(error);
-           
-        });
-      
-            
+        event.preventDefault();
+        const url = 'https://marketplace.parintekinnovation.com/api/user.php?method=logout';
+        var object ={};
+        object['session_token'] = localStorage.getItem('token');
+        var json = JSON.stringify(object);
+        console.log(json);
+        
+        localStorage.removeItem('token');
+        localStorage.setItem('isLoggedIn', false);
+        localStorage.removeItem('username');
+       
+        
+
+        axios.post(url, json,{
+          headers:{
+            'Content-Type':'application/json'
+          }
+        }) 
     };
     
     
 
     render() {
-      /*  const username = localStorage.getItem('username'); */
+    
     
         if (window.location.pathname === '/login' || window.location.pathname === '/signup' ) return null;
         if(!localStorage.getItem('token')) {
@@ -168,7 +183,7 @@ export default class Header extends Component {
                             <ul class="nav ml-4 mt-2">
                             <li class="dropdown"><a href="#" class="dropdown-toggle" data-toggle="dropdown" style={{color: 'yellow'}}>Hello {JSON.parse(localStorage.getItem('username'))}</a>
                                 <ul class="dropdown-menu" style={{minWidth: '100px'}}>
-                                    <li><Link to={'#'} onClick={this.handleLogout}>&nbsp;<i class="fa fa-power-off"></i>&nbsp;&nbsp;Logout</Link></li>
+                                    <li><Link to={'/'} onClick={this.handleLogout}>&nbsp;<i class="fa fa-power-off"></i>&nbsp;&nbsp;Logout</Link></li>
                                 </ul>
                             </li>
                             </ul>

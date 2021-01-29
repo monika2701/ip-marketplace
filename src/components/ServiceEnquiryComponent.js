@@ -1,26 +1,38 @@
-import React  from 'react';
+import React,{Component}  from 'react';
 import $ from 'jquery';
-import Login from './SignInComponent';
 import {Redirect} from 'react-router-dom';
 
 
 
-
-function ServiceEnquiry() {
+class ServiceEnquiry extends Component {
   
-  if(!localStorage.getItem('token')) {
-    return <Redirect to={'/login'}/>
+  componentDidMount(){
+    $(function() {
+      $('#termsChkbx').on("click",function() {
+        if ($(this).is(':checked')) {
+          $('#sub1').removeAttr('disabled');
+        } else {
+          $('#sub1').attr('disabled', 'disabled');
+        }
+      });
+    });
   }
+
+
+  render(){
+    if(!localStorage.getItem('token')) {
+      return <Redirect to='/login'/>
+    }
     return(
     <>
     
 <div class="enquiry">
-<h2>Service Enquiry Form</h2> 
+<h2>Enter Your Information</h2> 
 </div>
-<div class="container">
+<div class="container mb-5 pb-5">
 	
   <form>
-  <div class="form-row mb-2">
+  <div class="form-row mb-3">
     <div class="form-group col-md-5">
       <label id="design">Who are you?(Profession)<span class="star">*</span></label>
        <select class="custom-select mr-sm-2" id="inlineFormCustomSelect" required>
@@ -53,7 +65,7 @@ function ServiceEnquiry() {
     </div>
   </div>
 
-  <div class="form-row mb-2">
+  <div class="form-row mb-3">
     <div class="form-group col-md-5">
       <label id="design">Name of your Company/Organisation/Institute<span class="star">*</span></label>
       <input type="text" class="form-control" placeholder="Name of Your Institute" required/>
@@ -64,10 +76,21 @@ function ServiceEnquiry() {
       <input type="number" class="form-control" placeholder="Contact No to get enquiry" required/>
     </div>
   </div>
- 
-  <div class="form-group mb-2">
+  <div class="form-group mb-3">
+    <label id="design">What purpose your Idea solve<span class="star">*</span></label>
+    <textarea class="form-control" id="FormControlTextarea" placeholder="Benefit Of Idea" rows="3" required></textarea>
+  </div>
+  <div class="form-group mb-3">
+    <label id="design">What Makes Idea Unique<span class="star">*</span></label>
+    <textarea class="form-control" id="FormControlTextarea" placeholder="Key Feature of Idea" rows="3" required></textarea>
+  </div>
+  <div class="form-group mb-3">
+    <label id="design">Introduce your Idea<span class="star">*</span></label>
+    <textarea class="form-control" id="FormControlTextarea" placeholder="Idea details" rows="3" required></textarea>
+  </div>
+  <div class="form-group mb-3">
     <label id="design">Message<span class="star">*</span></label>
-    <textarea class="form-control" id="FormControlTextarea" rows="3" required></textarea>
+    <textarea class="form-control" id="FormControlTextarea" placeholder="Message" rows="3" required></textarea>
   </div>
   <div class="form-group mb-2">
     <div class="form-check">
@@ -77,7 +100,7 @@ function ServiceEnquiry() {
       </label>
     </div>
   </div>
-  <button type="submit" class="button1" id="sub1" disabled="disabled">Submit</button>
+  <button type="submit" class="button2" id="sub1" disabled="disabled">Confidential Submit</button>
  
   
 </form>
@@ -86,6 +109,7 @@ function ServiceEnquiry() {
    
 </>
 )
+}
 }
 
 

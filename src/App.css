@@ -18,6 +18,7 @@ img{
   max-width:100%;
 }
 
+
 /* Overlay Styles */
 
 .curtain-menu {
@@ -31,7 +32,7 @@ img{
 
 .curtain-menu-wrapper {
   /* display: flex; */
-  
+
   position: absolute;
   height: 100vh;
   width: 100vw;
@@ -177,6 +178,24 @@ img{
     color:#181277;
     margin-bottom:20px;
   }
+  .button2 {
+    background-color: #181277; 
+    border: none;
+    color: white;
+    padding:5px 4px 5px 4px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    border-radius: 100px;
+    width:170px;
+  }
+  button:disabled,
+button[disabled]{
+  border: 1px solid #999999;
+  background-color: #cccccc;
+  color: #666666;
+}
 
 /* Carousel Styles */
 
@@ -476,7 +495,7 @@ a, a:hover {
   background-position: top;
   position: relative; 
   background-attachment:fixed; 
-  height: calc(100vh - 146px);
+  margin-bottom:10px;
  
 }
 .services-title {
@@ -547,6 +566,7 @@ a, a:hover {
   .services-content--box {
     max-width: 100%;
   }
+  
   
 }
 
@@ -642,6 +662,7 @@ a, a:hover {
     transition: .5s;
   }
   @media (max-width: 575px) {
+  
     .social-link li a {
       color: #ccc;
       width: 20px;
@@ -654,7 +675,7 @@ a, a:hover {
       transition: .5s;
     }
     .copyright-text p {
-      font-size:18px;
+      font-size:14px;
       color: #ccc;
       margin-top:5px;
     }
@@ -909,6 +930,7 @@ transition: .5s all ease;
   color:white;
   padding-top:120px;
   height: calc(100vh - 146px);
+
 }
 
 
@@ -936,7 +958,7 @@ transition: .5s all ease;
   content: "\f107";
 }
 .accordion-section .panel-default .panel-body {
-  font-size: 1.2rem;
+  font-size: 1rem;
 }
 
 
