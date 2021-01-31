@@ -42,22 +42,22 @@ export default class Header extends Component {
     render() {
     
     
-        if (window.location.pathname === '/login' || window.location.pathname === '/signup' ) return null;
+       
         if(!localStorage.getItem('token')) {
             return (
-            <Navbar className="navbar-custom mr-auto" expand="lg" variant="dark" sticky="top">
+            <Navbar className="navbar-custom" expand="lg" variant="dark" sticky="top">
             <Navbar.Brand className="mr-auto">
                 <img
                     src="assets/logo1.png"
-                    width="400"
-                    height="70"
+                    width="300"
+                    height="50"
                     className="d-inline-block align-top"
                     alt="Parintek Innovations"
                 /></Navbar.Brand>
     
                 <Navbar.Toggle aria-controls="basic-navbar-nav" />
                 <Navbar.Collapse id="basic-navbar-nav">
-                <Nav className="mr-auto">
+                <Nav className="mx-auto">
                 <NavItem>
                 <NavLink className="nav-link"  to='/home'  
                 style={{color: 'white', textDecoration: 'none'}} 
@@ -103,15 +103,9 @@ export default class Header extends Component {
     
     
             <NavItem>
-                <div class="item">
+                <div class="item" style={{marginLeft:'90px'}}>
                 <i class="fa fa-sign-in"></i>
                 <span class="caption"><Link to="/login" style={{color: 'white', textDecoration: 'none'}}>LogIn</Link></span>
-                </div>
-            </NavItem>
-            <NavItem>
-                <div class="item">
-                <i class="fa fa-user"></i>
-                <span class="caption"><Link to="/signup" style={{color: 'white', textDecoration: 'none'}}>SignUp</Link></span>
                 </div>
             </NavItem>
           
@@ -122,19 +116,19 @@ export default class Header extends Component {
             )     
         }
         return (
-            <Navbar className="navbar-custom mr-auto" expand="lg" variant="dark" sticky="top">
+            <Navbar className="navbar-custom" expand="lg" variant="dark" sticky="top">
             <Navbar.Brand className="mr-auto">
                 <img
                     src="assets/logo1.png"
-                    width="400"
-                    height="70"
+                    width="300"
+                    height="50"
                     className="d-inline-block align-top"
                     alt="Parintek Innovations"
                 /></Navbar.Brand>
     
                 <Navbar.Toggle aria-controls="basic-navbar-nav" />
                 <Navbar.Collapse id="basic-navbar-nav">
-                <Nav className="mr-auto">
+                <Nav className="mx-auto">
                 <NavItem>
                 <NavLink className="nav-link"  to='/home'  
                 style={{color: 'white', textDecoration: 'none'}} 
@@ -177,18 +171,16 @@ export default class Header extends Component {
                 style={{color: 'white', textDecoration: 'none'}} 
                 activeStyle={{fontWeight: "bold",color: "white",textDecoration: 'underline'}}>FAQ</NavLink>
             </NavItem>
-    
-    
-           <NavItem>
-                            <ul class="nav ml-4 mt-2">
-                            <li class="dropdown"><a href="#" class="dropdown-toggle" data-toggle="dropdown" style={{color: 'yellow'}}>Hello {JSON.parse(localStorage.getItem('username'))}</a>
-                                <ul class="dropdown-menu" style={{minWidth: '100px'}}>
-                                    <li><Link to={'/'} onClick={this.handleLogout}>&nbsp;<i class="fa fa-power-off"></i>&nbsp;&nbsp;Logout</Link></li>
-                                </ul>
-                            </li>
-                            </ul>
-                         </NavItem>  
-                        
+            <NavItem>
+                <ul class="nav ml-4 mt-2">
+                    <li class="dropdown"><a href="#" class="dropdown-toggle" data-toggle="dropdown" style={{color: 'yellow'}}>Hello {JSON.parse(localStorage.getItem('username'))}</a>
+                        <ul class="dropdown-menu" style={{minWidth: '100px'}}>
+                        <li><Link to={'/'} onClick={this.handleLogout}>&nbsp;<i class="fa fa-power-off"></i>&nbsp;&nbsp;Logout</Link></li>
+                        </ul>
+                    </li>
+                </ul>
+            </NavItem>  
+          
            
      </Nav>
     </Navbar.Collapse>

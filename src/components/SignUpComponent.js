@@ -80,7 +80,7 @@ export default class SignUp extends Component {
             
             <div className="container">
               
-              <div class="signup-form mt-5">
+              <div class="signup-form mt-1 pb-2">
                 
                         <form onSubmit={this.handleSubmit}>
                         <h2 class="text-center">Register</h2>		
@@ -122,7 +122,7 @@ export default class SignUp extends Component {
                                     </div>
                                 
                             </div>
-                            <div className="form-group">
+                          {/*   <div className="form-group">
                             <div class="input-group mb-4">
                                 <div class="input-group-prepend">
                                 <div class="input-group-text"><i class="fa fa-lock"></i></div>
@@ -133,7 +133,7 @@ export default class SignUp extends Component {
                                         Please provide a valid Password.
                                     </div>
                                 
-                            </div>
+                            </div> */}
                            
                            
                             <div className="form-group">
@@ -147,7 +147,7 @@ export default class SignUp extends Component {
                             </div>
                            
                         </form>
-                        <div class="text-center">Already have an account?<Link to="/login">Login here</Link></div>
+                        <div class="text-center" style={{paddingBottom:"20px"}}>Already have an account?<Link to="/login">Login here</Link></div>
                     
                 </div>
                 {this.renderRedirect()}

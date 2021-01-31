@@ -36,7 +36,7 @@ class HomeContact extends Component {
     const{ name,email,contact,message } = this.state
    return (
    
-      <div className="container pt-3">
+      <div className="container" style={{paddingBottom:'23.5px'}}>
           <h3><center>Send Us Your Details to get a Free Call Back !</center></h3>
           <p><center>Call Us @+91-8076510108 and get Patent Consultation FREE</center></p>
           

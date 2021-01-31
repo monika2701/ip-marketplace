@@ -6,7 +6,7 @@ function HomeCollab() {
    return (
 
 
-    <div className="container pt-3">
+    <div className="container pt-3" style={{paddingBottom:'73.5px'}}>
 
 	<h1><center>Our Collaborators</center></h1>
     <br/>

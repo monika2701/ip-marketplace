@@ -7,7 +7,7 @@ function HomeServices() {
    return (
      
 
-<div className="services-container">
+<div className="services-container" style={{paddingBottom:'-2px'}}>
      <p className="services-title">Services we provide to our clients</p>
         <h1 className="services-title">Parintek at your Service</h1>
         <div className="services-border"></div>

@@ -74,7 +74,7 @@ export default class Login extends Component {
             
             <div className="container">
               
-              <div class="login-form mt-5 pt-5">
+              <div class="login-form mt-3 pt-5">
                 
                         <form onSubmit={this.handleSubmit}>
                         <h2 class="text-center">Sign in</h2>		

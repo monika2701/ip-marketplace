@@ -20,7 +20,7 @@ class HomeHelp extends React.Component{
     
     <div className="homesection3">
     <section id="home">
-        <div className="container">
+        <div className="container" style={{paddingBottom:'25.5px'}}>
 
           <div className="row">
           
@@ -80,7 +80,7 @@ class HomeHelp extends React.Component{
                   <div className="card card_four text-center">
                     <div className="title">
                       <h2><Link to="/corporates" className="Nav_link">Corporates</Link></h2>
-                      <p>How can we help</p>
+                      <p>How can we help you?</p>
                       <hr className="help"></hr>
                     </div>
                     <div className="option">

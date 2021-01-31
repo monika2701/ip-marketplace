@@ -16,7 +16,7 @@ class ContactAddress extends Component {
 
 
 <section id="contact">
- <div className="container pt-5">
+ <div className="container pt-5 pb-1">
     <div className="row">
        <div className="col-sm-12 col-md-6 col-lg-4 my-5">
          <div className="card border-0">

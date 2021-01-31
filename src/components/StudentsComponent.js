@@ -21,7 +21,11 @@ class Students extends React.Component{
     return (
       <>
 	 
-	 <div id="carousel" class="carousel slide" data-ride="carousel" data-interval="false">
+	 <div id="carousel" class="carousel slide" data-ride="carousel" data-pause="false">
+	 <ol class="carousel-indicators">
+        <li data-target="#carousel" data-slide-to="0" class="active"></li>
+        <li data-target="#carousel" data-slide-to="1"></li>
+      </ol>
   		<div class="carousel-inner">
   		<div class="carousel-item active">
       <div className="studentsection1">
@@ -37,7 +41,7 @@ class Students extends React.Component{
 
 	 <div class="carousel-item">
     <section id="students">
-		<div className="container">
+		<div className="container pb-2">
 			
 			<div className="row">
 				<div className="col-xs-12 col-sm-6 col-md-4 col-lg-4 col-xl-4">
@@ -108,15 +112,15 @@ class Students extends React.Component{
 	</div>
 	</div>
   <a class="carousel-control-prev" href="#carousel" role="button" data-slide="prev">
-    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+  <span class="width blink_me"><i class="fa fa-arrow-left font" style={{color:'black'}}></i></span>
     <span class="sr-only">Previous</span>
   </a>
   <a class="carousel-control-next" href="#carousel" role="button" data-slide="next">
-    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+  <span class="width blink_me"><i class="fa fa-arrow-right font" style={{color:'black'}}></i></span>
     <span class="sr-only">Next</span>
   </a>
 </div>
-<br/>
+
 
       </>
     )

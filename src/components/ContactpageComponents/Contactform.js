@@ -40,7 +40,7 @@ class ContactForm extends Component {
     <>
     
     <div style={{backgroundColor: '#f6f6f6',paddingBottom:'20px'}}>
-    <div className="container">
+    <div className="container" style={{paddingBottom:'12px'}}>
         <h2><center>We would love to hear from you!</center></h2>
           <div className="row">
          

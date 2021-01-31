@@ -6,7 +6,7 @@ function HomeAbout() {
    return (
      
     <div className="homesection2">
-    <div class="container">
+    <div class="container" style={{paddingBottom:'57.5px'}}>
          <div class="about"> 
        <div class="row">
            
