@@ -1,18 +1,26 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 
 
 function Footer() {
+    if (window.location.pathname === '/webinar') return null;
     return(
         <div class="footer-bottom">
         <div class="container">
                             <div class="row">
-                                <div class="col-xs-6 ">
+                                <div class="col-xs-3">
                                     <div class="copyright-text">
                                         <p>CopyRight © 2021   All Rights Reserved</p>
                                     </div>
                                 </div> 
-                                <div class="col-xs-6 ml-auto">							
-                                    <ul class="social-link pull-right">
+                                <div class="col-xs-6">
+                                    <div class="footer-link">
+                                    <p><Link to="/contacts" className="Nav_link">CONTACT US</Link> </p>
+                                    </div>
+                                </div> 
+                                <div class="col-xs-3">							
+                                    <ul class="social-link">
+                                       
                                         <li><a href="https://www.facebook.com/parintekinno/?modal=admin_todo_tour" target="_blank" rel="noreferrer"><span class="fa fa-facebook-square"></span></a></li>						
                                         <li><a href="https://twitter.com/ParintekIn" target="_blank" rel="noreferrer"><span class="fa fa-twitter-square"></span></a></li>
                                         <li><a href="https://www.linkedin.com/company/Parintek" target="_blank" rel="noreferrer"><span class="fa fa-linkedin-square"></span></a></li>

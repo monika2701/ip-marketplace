@@ -1,0 +1,40 @@
+/* Contact page Styles */
+
+
+.contactsection1 {
+    background-image: linear-gradient(
+      rgba(0,0,0,0.5),
+      rgba(0,0,0,0.8)
+      ),
+      url(https://i.pinimg.com/564x/a7/69/c2/a769c20187fe29c6dca1c787867d333c.jpg);
+    background-size: cover;
+    background-position: top;
+    position: relative;  
+    color:white;
+    padding-top:120px;
+    height: calc(100vh - 125px);
+    
+  }
+  
+  #contact .card:hover i,#contact .card:hover h4{
+    color: #181277;
+  }
+  
+  .button1 {
+    background-color: #181277; 
+    border: none;
+    color: white;
+    padding:5px 4px 5px 4px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    border-radius: 100px;
+    width:125px;
+  }
+  
+  #contact a,a:hover{
+    text-decoration: none;
+    color:black;
+  }
+  

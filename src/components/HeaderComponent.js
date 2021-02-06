@@ -27,6 +27,8 @@ export default class Header extends Component {
         localStorage.removeItem('token');
         localStorage.setItem('isLoggedIn', false);
         localStorage.removeItem('username');
+        localStorage.removeItem('email');
+        localStorage.removeItem('user_ref_no');
        
         
 
@@ -41,17 +43,16 @@ export default class Header extends Component {
 
     render() {
     
-    
+        if (window.location.pathname === '/webinar') return null;
        
         if(!localStorage.getItem('token')) {
             return (
             <Navbar className="navbar-custom" expand="lg" variant="dark" sticky="top">
-            <Navbar.Brand className="mr-auto">
+            <Navbar.Brand>
                 <img
                     src="assets/logo1.png"
                     width="300"
                     height="50"
-                    className="d-inline-block align-top"
                     alt="Parintek Innovations"
                 /></Navbar.Brand>
     
@@ -63,38 +64,43 @@ export default class Header extends Component {
                 style={{color: 'white', textDecoration: 'none'}} 
                 activeStyle={{fontWeight: "bold",color: "white",textDecoration: 'underline'}}>HOME</NavLink>
                 </NavItem>
+
                 <NavItem>
                 <NavLink className="nav-link"  to='/students'  
                 style={{color: 'white', textDecoration: 'none'}} 
                 activeStyle={{fontWeight: "bold",color: "white",textDecoration: 'underline'}}>STUDENTS</NavLink>
                 </NavItem>
+
                 <NavItem>
                 <NavLink className="nav-link"  to='/researchers'  
                 style={{color: 'white', textDecoration: 'none'}} 
                 activeStyle={{fontWeight: "bold",color: "white",textDecoration: 'underline'}}>RESEARCHERS</NavLink>
                 </NavItem>
+
                 <NavItem>
                 <NavLink className="nav-link"  to='/startups'  
                 style={{color: 'white', textDecoration: 'none'}} 
                 activeStyle={{fontWeight: "bold",color: "white",textDecoration: 'underline'}}>START UPS</NavLink>
                 </NavItem>
+
                 <NavItem>
-    
                 <NavLink className="nav-link"  to='/corporates'  
                 style={{color: 'white', textDecoration: 'none'}} 
                 activeStyle={{fontWeight: "bold",color: "white",textDecoration: 'underline'}}>CORPORATES</NavLink>
                 </NavItem>
+
                 <NavItem>
-                
-                <NavLink className="nav-link"  to='/blog'  
+                    
+                <Link className="nav-link"  to='https://parintek.com/blog/'  target="_blank"
                 style={{color: 'white', textDecoration: 'none'}} 
-                activeStyle={{fontWeight: "bold",color: "white",textDecoration: 'underline'}}>BLOG</NavLink>
+                activeStyle={{fontWeight: "bold",color: "white",textDecoration: 'underline'}}>BLOG</Link>
                 </NavItem>
-                <NavItem>
+                
+              {/*   <NavItem>
                 <NavLink className="nav-link"  to='/contacts'  
                 style={{color: 'white', textDecoration: 'none'}} 
                 activeStyle={{fontWeight: "bold",color: "white",textDecoration: 'underline'}}>CONTACT US</NavLink>
-                </NavItem>
+                </NavItem> */}
                 <NavItem>
                 <NavLink className="nav-link"  to='/faq' 
                 style={{color: 'white', textDecoration: 'none'}} 
@@ -103,10 +109,10 @@ export default class Header extends Component {
     
     
             <NavItem>
-                <div class="item" style={{marginLeft:'90px'}}>
-                <i class="fa fa-sign-in"></i>
-                <span class="caption"><Link to="/login" style={{color: 'white', textDecoration: 'none'}}>LogIn</Link></span>
-                </div>
+               <div style={{paddingLeft:'190px'}}>
+            <i id="loginicon" class="fa fa-sign-in"></i>
+            <span id="text"><Link to="/login" style={{color: 'white', textDecoration: 'none'}}>Login</Link></span>
+               </div>
             </NavItem>
           
            
@@ -129,50 +135,63 @@ export default class Header extends Component {
                 <Navbar.Toggle aria-controls="basic-navbar-nav" />
                 <Navbar.Collapse id="basic-navbar-nav">
                 <Nav className="mx-auto">
+                    
                 <NavItem>
                 <NavLink className="nav-link"  to='/home'  
                 style={{color: 'white', textDecoration: 'none'}} 
                 activeStyle={{fontWeight: "bold",color: "white",textDecoration: 'underline'}}>HOME</NavLink>
                 </NavItem>
+
                 <NavItem>
                 <NavLink className="nav-link"  to='/students'  
                 style={{color: 'white', textDecoration: 'none'}} 
                 activeStyle={{fontWeight: "bold",color: "white",textDecoration: 'underline'}}>STUDENTS</NavLink>
                 </NavItem>
+
                 <NavItem>
                 <NavLink className="nav-link"  to='/researchers'  
                 style={{color: 'white', textDecoration: 'none'}} 
                 activeStyle={{fontWeight: "bold",color: "white",textDecoration: 'underline'}}>RESEARCHERS</NavLink>
                 </NavItem>
+
                 <NavItem>
                 <NavLink className="nav-link"  to='/startups'  
                 style={{color: 'white', textDecoration: 'none'}} 
                 activeStyle={{fontWeight: "bold",color: "white",textDecoration: 'underline'}}>START UPS</NavLink>
                 </NavItem>
+
                 <NavItem>
-    
                 <NavLink className="nav-link"  to='/corporates'  
                 style={{color: 'white', textDecoration: 'none'}} 
                 activeStyle={{fontWeight: "bold",color: "white",textDecoration: 'underline'}}>CORPORATES</NavLink>
                 </NavItem>
+
                 <NavItem>
-                
-                <NavLink className="nav-link"  to='/blog'  
+                <Link className="nav-link"  to='https://parintek.com/blog/'  target="_blank"
                 style={{color: 'white', textDecoration: 'none'}} 
-                activeStyle={{fontWeight: "bold",color: "white",textDecoration: 'underline'}}>BLOG</NavLink>
+                activeStyle={{fontWeight: "bold",color: "white",textDecoration: 'underline'}}>BLOG</Link>
                 </NavItem>
-                <NavItem>
+
+               {/*  <NavItem>
+                <NavLink className="nav-link"  to='/webinar'  target="_blank"
+                style={{color: 'white', textDecoration: 'none'}} 
+                activeStyle={{fontWeight: "bold",color: "white",textDecoration: 'underline'}}>WEBINAR</NavLink>
+                </NavItem> */}
+                
+                {/* <NavItem>
                 <NavLink className="nav-link"  to='/contacts'  
                 style={{color: 'white', textDecoration: 'none'}} 
                 activeStyle={{fontWeight: "bold",color: "white",textDecoration: 'underline'}}>CONTACT US</NavLink>
-                </NavItem>
+                </NavItem> */}
+
                 <NavItem>
                 <NavLink className="nav-link"  to='/faq' 
                 style={{color: 'white', textDecoration: 'none'}} 
                 activeStyle={{fontWeight: "bold",color: "white",textDecoration: 'underline'}}>FAQ</NavLink>
-            </NavItem>
-            <NavItem>
-                <ul class="nav ml-4 mt-2">
+                </NavItem>
+
+                <NavItem>
+                <ul class="nav ml-5 pl-5 mt-2">
                     <li class="dropdown"><a href="#" class="dropdown-toggle" data-toggle="dropdown" style={{color: 'yellow'}}>Hello {JSON.parse(localStorage.getItem('username'))}</a>
                         <ul class="dropdown-menu" style={{minWidth: '100px'}}>
                         <li><Link to={'/'} onClick={this.handleLogout}>&nbsp;<i class="fa fa-power-off"></i>&nbsp;&nbsp;Logout</Link></li>

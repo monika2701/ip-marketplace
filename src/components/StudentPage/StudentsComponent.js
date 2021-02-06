@@ -1,5 +1,7 @@
 import React from 'react';
-import ClickModal  from './ClickModalComponent';
+import './Student.css';
+import StudentModal  from './studentModal';
+import {Link} from 'react-router-dom';
 
 
 
@@ -21,7 +23,7 @@ class Students extends React.Component{
     return (
       <>
 	 
-	 <div id="carousel" class="carousel slide" data-ride="carousel" data-pause="false">
+	 <div id="carousel" class="carousel slide" data-ride="carousel" data-interval="false">
 	 <ol class="carousel-indicators">
         <li data-target="#carousel" data-slide-to="0" class="active"></li>
         <li data-target="#carousel" data-slide-to="1"></li>
@@ -41,7 +43,7 @@ class Students extends React.Component{
 
 	 <div class="carousel-item">
     <section id="students">
-		<div className="container pb-2">
+		<div className="container pb-4">
 			
 			<div className="row">
 				<div className="col-xs-12 col-sm-6 col-md-4 col-lg-4 col-xl-4">
@@ -60,7 +62,7 @@ class Students extends React.Component{
 						<div className="card-block block-2">
 							<h3 className="card-title">Career Support</h3>
 							<p className="card-text mb-4">Want Career Support In IPR Industry ?Click To Get Info About Career Support</p>
-							<a onClick={this.handleModalOpen}  style={{cursor: 'pointer'}} >Click here<i class="fa fa-angle-double-right ml-2"></i></a>
+							<a href="https://www.parintek.com/career.php" target="_blank" >Click here<i class="fa fa-angle-double-right ml-2"></i></a>
 							
 						</div>
 					</div>
@@ -71,7 +73,7 @@ class Students extends React.Component{
 						<div className="card-block block-3 d-flex flex-column">
 							<h3 className="card-title">Free Patent Consultation</h3>
 							<p className="card-text">Get Fund For An Invention.Get This Plan!</p>
-							<a onClick={this.handleModalOpen}  style={{cursor: 'pointer'}} >Click here<i class="fa fa-angle-double-right ml-2"></i></a>
+							<Link to="/serviceEnquiry">Click here<i class="fa fa-angle-double-right ml-2"></i></Link>
 							
 						</div>
 					</div>
@@ -101,7 +103,7 @@ class Students extends React.Component{
 					</div>
 				</div>
 
-				<ClickModal
+				<StudentModal
            modalOpen={this.state.modalOpen}
            handleModalOpen={this.handleModalOpen}/>
            
@@ -112,11 +114,11 @@ class Students extends React.Component{
 	</div>
 	</div>
   <a class="carousel-control-prev" href="#carousel" role="button" data-slide="prev">
-  <span class="width blink_me"><i class="fa fa-arrow-left font" style={{color:'black'}}></i></span>
+  <span class="width blink_me"><i class="fa fa-angle-left fa-4x" style={{color:'yellow',fontWeight:'bold'}}></i></span>
     <span class="sr-only">Previous</span>
   </a>
   <a class="carousel-control-next" href="#carousel" role="button" data-slide="next">
-  <span class="width blink_me"><i class="fa fa-arrow-right font" style={{color:'black'}}></i></span>
+  <span class="width blink_me"><i class="fa fa-angle-right fa-4x" style={{color:'yellow',fontWeight:'bold'}}></i></span>
     <span class="sr-only">Next</span>
   </a>
 </div>

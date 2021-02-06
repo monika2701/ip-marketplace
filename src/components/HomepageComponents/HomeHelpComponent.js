@@ -1,6 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import ClickModal  from '../ClickModalComponent';
+import StudentModal from '../StudentPage/studentModal';
 
 class HomeHelp extends React.Component{
     state = {
@@ -35,11 +36,11 @@ class HomeHelp extends React.Component{
                     <ul>
                       <li><Link to="/students" className="Nav_link">Idea Support</Link></li>
                       <li><a onClick={this.handleModalOpen}  style={{cursor: 'pointer'}} >Submit Idea for Evaluation</a></li>
-                      <ClickModal
+                      <StudentModal
                         modalOpen={this.state.modalOpen}
                         handleModalOpen={this.handleModalOpen}/>
-                      <li><a href="https://www.parintek.com/book/"  style={{color: 'white', textDecoration: 'none'}}>Learn About Patent</a></li>
-                      <li><a href="https://www.parintek.com/career.php" style={{color: 'white', textDecoration: 'none'}}>Career Support in IP</a></li>
+                      <li><a href="https://www.parintek.com/book/" target="_blank" style={{color: 'white', textDecoration: 'none'}}>Learn About Patent</a></li>
+                      <li><a href="https://www.parintek.com/career.php" target="_blank" style={{color: 'white', textDecoration: 'none'}}>Career Support in IP</a></li>
                     </ul>
                   </div>
                 </div>
@@ -55,7 +56,7 @@ class HomeHelp extends React.Component{
                     <ul>
                       <li><Link to="/startups" className="Nav_link">Patent Filing</Link></li>
                       <li><Link to="/serviceEnquiry" className="Nav_link">Request for Consultation</Link></li>
-                      <li><a href="https://www.parintek.com/services.php"  style={{color: 'white', textDecoration: 'none'}}>IPR Services</a></li>
+                      <li><a href="https://www.parintek.com/services.php" target="_blank"  style={{color: 'white', textDecoration: 'none'}}>IPR Services</a></li>
                     </ul>
                   </div>
                 </div>
@@ -87,8 +88,8 @@ class HomeHelp extends React.Component{
                       <ul>
                       <li><Link to="/serviceEnquiry" className="Nav_link">Request for Consultation</Link></li>
                         <li><Link to="/serviceEnquiry" className="Nav_link">Patentability Search</Link></li>
-                        <li><a href="https://marketplace.parintekinnovation.com/invention-management-tool" style={{color: 'white', textDecoration: 'none'}}>Invention Management Tool</a></li>
-                        <li><a href="https://www.parintek.com/services.php" style={{color: 'white', textDecoration: 'none'}}>IPR Services</a></li>
+                        <li><a href="https://marketplace.parintekinnovation.com/invention-management-tool" target="_blank" style={{color: 'white', textDecoration: 'none'}}>Invention Management Tool</a></li>
+                        <li><a href="https://www.parintek.com/services.php" target="_blank" style={{color: 'white', textDecoration: 'none'}}>IPR Services</a></li>
                       </ul>
                     </div>
                 </div>

@@ -1,0 +1,19 @@
+/* Corporstes page style */
+
+.corporatesection1 {
+    background-image: linear-gradient(
+      rgba(55, 117, 158, 0.5),
+      rgba(9, 1, 26, 0.8)
+      ),
+      url(https://i.pinimg.com/564x/88/96/0f/88960f5906f169753ebf52a4bf13f085.jpg);
+    background-size: cover;
+    background-position: top;
+    position: relative;  
+    color:white;
+    padding-top:120px;
+    min-height: calc(100vh - 125px);
+  }
+  
+  
+  
+  

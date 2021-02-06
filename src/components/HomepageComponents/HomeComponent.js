@@ -1,5 +1,5 @@
 import React,{Component} from 'react';
-
+import './Home.css';
 import HomeMain from './HomeMainComponent';
 import HomeHelp from './HomeHelpComponent';
 import HomeServices from './HomeServicesComponent';
@@ -13,7 +13,7 @@ class Home extends Component{
 render(){
     return (
     
-      <div id="carousel" class="carousel slide" data-ride="carousel" data-pause="false">
+      <div id="carousel" class="carousel slide" data-ride="carousel" data-interval="false">
       <ol class="carousel-indicators">
         <li data-target="#carousel" data-slide-to="0" class="active"></li>
         <li data-target="#carousel" data-slide-to="1"></li>
@@ -43,11 +43,11 @@ render(){
         </div>
       </div>
       <a class="carousel-control-prev" href="#carousel" role="button" data-slide="prev">
-      <span class="width blink_me"><i class="fa fa-arrow-left font" style={{color:'black'}}></i></span>
+      <span class="width blink_me"><i class="fa fa-angle-left fa-4x" style={{color:'yellow',fontWeight:'bold'}}></i></span>
         <span class="sr-only">Previous</span>
       </a>
       <a class="carousel-control-next" href="#carousel" role="button" data-slide="next">
-        <span class="width blink_me"><i class="fa fa-arrow-right font" style={{color:'black'}}></i></span>
+        <span class="width blink_me"><i class="fa fa-angle-right fa-4x" style={{color:'yellow',fontWeight:'bold'}}></i></span>
         <span class="sr-only">Next</span>
       </a>
     </div>

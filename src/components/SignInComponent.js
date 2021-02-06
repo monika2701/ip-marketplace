@@ -52,7 +52,8 @@ export default class Login extends Component {
                     localStorage.setItem('isLoggedIn', true);
 
                     localStorage.setItem('username', JSON.stringify(js.full_name));
-                    
+                    localStorage.setItem('email',JSON.stringify(js.email));
+                    localStorage.setItem('user_ref_no',JSON.stringify(js.ref_no));
                 }
             })
             .catch(error => {

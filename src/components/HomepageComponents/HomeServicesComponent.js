@@ -6,8 +6,8 @@ function HomeServices() {
     
    return (
      
-
-<div className="services-container" style={{paddingBottom:'-2px'}}>
+<div class="servicessection">
+<div className="services-container">
      <p className="services-title">Services we provide to our clients</p>
         <h1 className="services-title">Parintek at your Service</h1>
         <div className="services-border"></div>
@@ -92,7 +92,7 @@ function HomeServices() {
         </div> 
       
       </div> 
-    
+      </div>
 
    )
 }

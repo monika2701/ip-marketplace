@@ -1,5 +1,6 @@
 import React,{Component} from 'react';
 import axios from 'axios';
+import Alert from  '../../extras/alert';
 
 
 class HomeContact extends Component {
@@ -9,22 +10,31 @@ class HomeContact extends Component {
     this.state={
       name: '',
       email: '',
-      contact: '',
-      message: ''
+      mobile: '',
+      subject:'This is a test subject',
+      message: '',
+      formError: false
+      
     }
+    this.baseState = this.state 
   }
-
+  
   changeHandler = (e) => {
     this.setState({[e.target.name]: e.target.value })
   }
 
   submitHandler = e => {
-    e.preventDefault()
+    e.preventDefault();
+    
     console.log(this.state)
     axios
-      .post('',this.state)
+      .post('https://marketplace.parintekinnovation.com/api/contact.php?method=ContactUs',this.state)
+      
       .then(response => {
         console.log(response)
+        this.setState(this.baseState)
+        this.setState({formError: true});
+        
       })
       .catch(error => {
         console.log(error)
@@ -33,11 +43,11 @@ class HomeContact extends Component {
   }
     
   render(){
-    const{ name,email,contact,message } = this.state
+    const{ name,email,mobile,subject,message } = this.state
    return (
    
-      <div className="container" style={{paddingBottom:'23.5px'}}>
-          <h3><center>Send Us Your Details to get a Free Call Back !</center></h3>
+      <div className="container" style={{paddingBottom:'4px'}}>
+          <h3 style={{marginTop:'20px'}}><center>Send Us Your Details to get a Free Call Back !</center></h3>
           <p><center>Call Us @+91-8076510108 and get Patent Consultation FREE</center></p>
           
             <div className="row">
@@ -72,13 +82,23 @@ class HomeContact extends Component {
                         <div className="form-group ">
                           <input type="tel" 
                                  class="form-control" 
-                                 name="contact" 
-                                 value={contact}
+                                 name="mobile" 
+                                 value={mobile}
                                  onChange={this.changeHandler}
                                  placeholder="Contact Number" pattern="[0-9]{10}" required/> 
                           <label class="form-label" for="surname">Contact Number</label>
                         </div>
 
+                       {/*  <div className="form-group ">
+                          <textarea className="form-control textarea" 
+                                    name="subject" 
+                                    rows="1" 
+                                    value={subject}
+                                    onChange={this.changeHandler}
+                                    placeholder="Subject"></textarea>
+                          <label class="form-label" for="message">Subject</label>
+                        </div>
+ */}
                         <div className="form-group ">
                           <textarea className="form-control textarea" 
                                     name="message" 
@@ -89,7 +109,13 @@ class HomeContact extends Component {
                           <label class="form-label" for="message">Write a message</label>
                         </div>
 
-                        <button type="submit" class="btn btn-blue text-center">Submit </button>
+                        <button type="submit" value="submit" class="btn btn-blue text-center" >Submit 
+                        {this.state.formError ? (
+                                       <Alert/>
+                                    ) : (
+                                        <span></span>
+                                    )}</button>
+                       
                     </form>
             </div>
             

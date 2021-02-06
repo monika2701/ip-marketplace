@@ -17,6 +17,7 @@ class Overlay extends Component {
   
    
     render() {
+      if (window.location.pathname === '/webinar' || window.location.pathname === '/serviceEnquiry' || window.location.pathname === '/ideaEvaluation') return null;
         return (
             <>
             <div class="curtain-menu-button" data-curtain-menu-button>

@@ -1,0 +1,15 @@
+/* Researchers page style */
+.researchersection1 {
+    background-image: linear-gradient(
+      rgba(55, 117, 158, 0.5),
+      rgba(9, 1, 26, 0.8)
+      ),
+      url(https://i.pinimg.com/564x/7e/39/05/7e39051af8f69b271b8345c7968b1a20.jpg);
+    background-size: cover;
+    background-position: top;
+    position: relative;  
+    color:white;
+    padding-top:120px;
+    min-height: calc(100vh - 125px);
+  }
+  

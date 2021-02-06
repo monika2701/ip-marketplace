@@ -1,0 +1,90 @@
+/* Students page design */
+
+.studentsection1 {
+    background-image: linear-gradient(
+      rgba(55, 117, 158, 0.5),
+      rgba(9, 1, 26, 0.8)
+      ),
+      url(https://i.pinimg.com/564x/88/96/0f/88960f5906f169753ebf52a4bf13f085.jpg);
+    background-size: cover;
+    background-position: top;
+    position: relative;  
+    color:white;
+    padding-top:120px;
+    min-height: calc(100vh - 125px);
+  }
+  
+  
+  
+  section .section-title{
+      text-align:center;
+      color:#181277;
+      margin-bottom:50px;
+      text-transform:uppercase;
+  }
+  #students{
+      background:#ffffff;
+  }
+  #students .card{
+      padding: 1rem!important;
+      border:none;
+      margin-bottom:1rem;
+      -webkit-transition: .5s all ease;
+      -moz-transition: .5s all ease;
+      transition: .5s all ease;
+  }
+  #students .card:hover{
+      -webkit-box-shadow: 5px 7px 9px -4px rgb(158, 158, 158);
+      -moz-box-shadow: 5px 7px 9px -4px rgb(158, 158, 158);
+      box-shadow: 5px 7px 9px -4px rgb(158, 158, 158);
+  }
+  #students .card .card-block{
+      padding-left: 50px;
+      position: relative;
+  }
+  #students .card .card-block a{
+      color: #181277!important;
+      font-weight:700;
+      text-decoration:none;
+  }
+  #students .card .card-block a i{
+      display:none;
+      
+  }
+  #students .card:hover .card-block a i{
+      display:inline-block;
+      font-weight:700;
+      
+  }
+  #students .card .card-block:before{
+      font-family: FontAwesome;
+      position: absolute;
+      font-size: 39px;
+      color: #181277;
+      left: 0;
+      -webkit-transition: -webkit-transform .2s ease-in-out;
+      transition:transform .2s ease-in-out;
+  }
+  #students .card .block-1:before{
+      content: "\f013";
+  }
+  #students .card .block-2:before{
+      content: "\f013";
+  }
+  #students .card .block-3:before{
+      content: "\f013";
+  }
+  #students .card .block-4:before{
+      content: "\f013";
+  }
+  #students .card .block-5:before{
+    content: "\f013";
+  }
+  
+  #students  .card:hover .card-block:before{
+  -webkit-transform: rotate(360deg);
+  transform: rotate(360deg);	
+  -webkit-transition: .5s all ease;
+  -moz-transition: .5s all ease;
+  transition: .5s all ease;
+  }

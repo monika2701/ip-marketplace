@@ -1,0 +1,41 @@
+/* FAQ page styles */
+
+.faqsection1 {
+    background-image: linear-gradient(
+      rgba(0,0,0,0.5),
+      rgba(0,0,0,0.8)
+      ),
+      url(https://i.pinimg.com/564x/88/96/0f/88960f5906f169753ebf52a4bf13f085.jpg);
+    background-size: cover;
+    background-position: top;
+    position: relative;  
+    color:white;
+    padding-top:120px;
+    height: calc(100vh - 125px);
+  
+  }
+  
+  
+  
+  .collapsible-link {
+    width: 100%;
+    position: relative;
+    text-align: left !important;
+  }
+  
+  .collapsible-link::before {
+    content: '\f107';
+    position: absolute;
+    top: 50%;
+    right: 0.8rem;
+    transform: translateY(-50%);
+    display: block;
+    font-family: 'FontAwesome';
+    font-size: 1.1rem;
+  }
+  
+  .collapsible-link[aria-expanded='true']::before {
+    content: '\f106';
+  }
+  
+  
