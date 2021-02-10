@@ -385,13 +385,12 @@ img{
 
 .login-form {
   width: 380px;
-  margin: 30px auto;
+  margin: 10px auto;
 }
 .login-form form {
-  margin-bottom: 15px;
-  
+  margin-bottom: 5px;
   box-shadow: 0px 0px 2px rgba(0, 0, 0, 0.3);
-  padding: 30px;
+  padding: 25px;
 }
 .login-form h2 {
   margin: 0 0 15px;

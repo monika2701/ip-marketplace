@@ -1,6 +1,8 @@
 import React, {Component} from 'react';
 import axios from 'axios';
 import {Link, Redirect} from 'react-router-dom';
+import FacebookLogin from 'react-facebook-login/dist/facebook-login-render-props';
+import GoogleLogin from 'react-google-login';
 
 
 export default class Login extends Component {
@@ -20,6 +22,7 @@ export default class Login extends Component {
     handlePwdChange = event => {
         this.setState({password: event.target.value});
     };
+    
 
     handleSubmit = event => {
         event.preventDefault();
@@ -69,20 +72,49 @@ export default class Login extends Component {
         }
     };
 
+    
+
     render() {
         const isLoading = this.state.isLoading;
+
+        const responseFacebook = (response) => {
+            console.log(response);
+          }
+      
+          const responseGoogle = (response) => {
+            console.log(response);
+          }
+          
         return (
             
             <div className="container">
               
-              <div class="login-form mt-3 pt-5">
+              <div class="login-form mt-3">
                 
                         <form onSubmit={this.handleSubmit}>
-                        <h2 class="text-center">Sign in</h2>		
-                      {/*   <div class="text-center social-btn">
-                            <a href="#" class="btn btn-primary btn-block"><i class="fa fa-facebook"></i> Sign in with <b>Facebook</b></a>
-                            <a href="#" class="btn btn-danger btn-block"><i class="fa fa-google"></i> Sign in with <b>Google</b></a>
-                        </div> */}
+                        <h2 class="text-center">Sign in</h2>	
+                        <div class="text-center social-btn">
+
+                        <FacebookLogin
+                            appId="489041964997270"
+                            fields="name,email,picture"
+                            callback={responseFacebook}
+                            render={renderProps => (
+                                <button onClick={renderProps.onClick}  class="btn btn-primary btn-block"><i class="fa fa-facebook"></i>Sign in with <b>Facebook</b></button>
+                               )}
+                             
+                              />
+                        
+                        <GoogleLogin
+                            clientId="180352148454-5gillvlfnostjth3urk4eul0ismo24t3.apps.googleusercontent.com"
+                            onSuccess={this.handleSubmit}
+                            onFailure={responseGoogle}
+                            render={renderProps => (
+                                <button onClick={renderProps.onClick} class="btn btn-danger btn-block"><i class="fa fa-google"></i> Sign in with <b>Google</b></button>
+                            )}
+                            isSignedIn={true} />
+                           
+                        </div>
                             <div className="form-group">
                                 
                             <div class="input-group mt-3 mb-4">
@@ -90,7 +122,7 @@ export default class Login extends Component {
                                 <div class="input-group-text"><i class="fa fa-user"></i></div>
                                 </div>
                                     
-                                    <input className={"form-control " + (this.state.authError ? 'is-invalid' : '')} id="inputEmail" placeholder="Email address" type="email" name="email" onChange={this.handleEmailChange} autoFocus required/>
+                                    <input className={"form-control " + (this.state.authError ? 'is-invalid' : '')} id="inputEmail" placeholder="Email address" type="email" name="email" onChange={this.handleEmailChange} required/>
                                     </div>
                                     <div className="invalid-feedback">
                                         Please provide a valid Email.
