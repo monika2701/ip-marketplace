@@ -1,73 +1,85 @@
 import React,{Component} from 'react';
 import './Webinar.css';
+import WebinarForm from './webinarForm';
 import axios from 'axios';
-import Alert from  '../../extras/alert';
+import ReactHtmlParser from 'react-html-parser'; 
+import parse from 'html-react-parser';
 
 class Webinar extends Component {
-  state = {
+  constructor(props) {
+    super(props);
 
-      first_name:'',
-      last_name :'',
-      email:'',
-      company_name:'',
-      webinar_name :'Webinar',
-      payment_status:'0',
-      payment_value:'0',
-      no_of_session_booked:'1',
-      formError: false
-  };
-  changeHandler = (e) => {
-    this.setState({[e.target.name]: e.target.value })
-  }
-  handleSubmit = event => {
-    event.preventDefault();
-    const url = 'https://marketplace.parintekinnovation.com/api/webinar.php?method=BookWebinar';
-    const first_name = this.state.first_name;
-    const last_name = this.state.last_name;
-    const email = this.state.email;
-    const company_name = this.state.company_name;
-    const webinar_name = this.state.webinar_name;
-    const payment_status = this.state.payment_status;
-    const payment_value = this.state.payment_value;
-    const no_of_session_booked = this.state.no_of_session_booked;
-    let bodyFormData = new FormData();
-    bodyFormData.set('first_name', first_name);
-    bodyFormData.set('last_name', last_name);
-    bodyFormData.set('email', email);
-    bodyFormData.set('company_name',company_name);
-    bodyFormData.set('webinar_name',webinar_name);
-    bodyFormData.set('payment_status',payment_status);
-    bodyFormData.set('payment_value',payment_value);
-    bodyFormData.set('no_of_session_booked',no_of_session_booked);
-    var object = {};
-    bodyFormData.forEach((value, key) => object[key] = value);
-    var json = JSON.stringify(object);
-  
-    axios.post(url, json,{
-      headers:{
-        'Content-Type':'application/json'
-      }
-    }) 
+    this.state = {
+        webinar_id : localStorage.getItem('WebinarID'),
+      
+    };
+}
+
+componentDidMount() {
     
-        .then(result => {
-         console.log(result.data);
-         this.setState({formError: true});
-            
-        })
-        .catch(error => {
-            console.log(error);
-          
-        });
-};
-
   
+    axios.post('https://marketplace.parintekinnovation.com/api/webinar.php?method=webinarInfo', this.state)
+
+        .then(result => { 
+          console.log(result.data);
+          var js = result.data.Response;
+         if (result.data) {
+          this.setState({ webinar_name: js.webinar_name});
+          this.setState({ about_speaker: js.about_speaker});
+          this.setState({ webinar_date: js.webinar_date});
+          this.setState({ webinar_duration: js.webinar_duration});
+          this.setState({ webinar_time: js.webinar_time});
+          this.setState({ speaker_name: js.speaker_name});
+          this.setState({ speaker_photo: js.speaker_photo});
+          this.setState({ speaker_summary: js.speaker_summary});
+          this.setState({ classipi: js.is_classipi});
+          this.setState({ about_webinar: js.about_webinar});
+        
+        }
+        console.log(this.state.webinar_name);
+       
+})
+.catch(error => {
+  console.log(error);
+  
+});
+}
+  
+ 
  render(){
+   
+ 
+
+ const { webinar_name,about_speaker,webinar_date,webinar_time,webinar_duration,
+          speaker_name,speaker_photo,speaker_summary,classipi,about_webinar } = this.state;
+
    return (
   <>
 <body>
 
-    <img src="https://marketplace.parintekinnovation.com/images/header.png"  style={{width: "100%" ,
-       marginBottom: '3%',    borderTop: '26px solid blue'}}class="ïmg-responsive"/>
+<div class="hs-webinar-hero">
+  <div class="hs-webinar-hero__container">
+    <div class="hs-webinar-hero__top">
+      <div class="hs-webinar-hero__top-left">
+        <div class="hs-webinar-hero__logo"><a href="#"><img src="assets/logo1.png" /></a></div>
+      </div>
+      
+    </div> 
+  </div>
+</div>
+
+<section id="home">
+  <div class="home_text"> 
+  {/* {ReactHtmlParser(webinar_name)} */}
+  {/* {parse('<div>webinar_name</div>')} */}
+ {/*  <div dangerouslySetInnerHTML={{__html: console.log(webinar_name)}} /> */}
+  
+    <h6 style={{ fontWeight: 'bolder',fontSize:'2.5em'}} dangerouslySetInnerHTML={{ __html: webinar_name }}></h6>
+   {/*  <h2 style={{ fontWeight: 'bolder',fontSize:'2.5em'}}>{webinar_name}</h2> */}
+  </div>
+</section>
+
+
 
 <div class="container">
     <div class="row">
@@ -80,41 +92,13 @@ class Webinar extends Component {
                     fontFamily: 'cursive',
                     fontWeight: '400'}}>About the webinar</h5>
       
-            <h5 style={{fontSize: "16px",
+      <h5 style={{fontSize: "20px",
                     marginLeft: '4%',
                     color: '#000',
-                    fontFamily: '"Open Sans", Arial, sans-serif',
-                    fontWeight: '500'}}>This session is focused on answering
-                Intellectual property (IP) related
-                queries.</h5>
-         
-                <h5 style={{fontSize: "19px",
-                    margin: '4%',
-                    color: '#05053e',
-                    letterSpacing: '2px',
-                    fontFamily: 'cursive',
-                    }} >Some questions handpicked by the Speaker to be covered during the session:</h5>
-            
-           
-            <ul style={{fontSize: "18px",
-                    marginLeft: '4%',
-                    color: '#000',
-                    letterSpacing: '1px',
-                    fontFamily: '"Open Sans", Arial, sans-serif',
-                    fontWeight: '500'}}>
-                <li style={{fontWeight: '500'}}>Is IP important for a small and
-                    medium size company?</li>
-                <li style={{fontWeight: '500'}}>When is the right time for start-ups
-                    to think about IP?</li>
-                <li style={{fontWeight: '500'}}>Do I need to worry about protecting
-                    innovation in foreign country?</li>
-                <li style={{fontWeight: '500'}}>How IP helps in monetization?</li>
-                <li style={{fontWeight: '500'}}>Can I prepare and file my own patent
-                    application?</li>
-                <li style={{fontWeight: '500'}}>What is the importance of Non Disclosure Agreement?</li>
-                <li style={{fontWeight: '500'}}>How Freedom to Operate check
-                    helps?</li>
-            </ul>
+                    fontFamily: '"Open Sans",Arial,sans-serif',
+                    fontWeight: '500'}} dangerouslySetInnerHTML={{ __html: about_webinar }}></h5>
+
+
             <div class="row" style={{fontSize: "14px",
                     letterSpacing: '1px'}}>
                {/*  <p>Further, five
@@ -127,116 +111,62 @@ class Webinar extends Component {
 
                   
                
-                    <div class="section row col-md-12" style={{fontSize: "14px",
-                                                                margin: '0 auto',
-                                                                padding: '10px',
-                   }}>
-
-
-
+    <div class="section row col-md-12" style={{fontSize: "14px",margin: '0 auto',padding: '10px'}}>
         <div class="row"> 
-        
             <div class="col-md-12 col-sm-12" style={{paddingTop:'2%'}}>
             <h5 style={{fontSize: "26px",
                          margin: '2%',
                          color:'05053e',
                          letterSpacing:'2px',
                          fontFamily:'cursive',
-                         fontWeight:'400',
-                        
-                   }}>About the Speaker</h5>
+                         fontWeight:'400',}}>About the Speaker</h5>
 
             <div style={{borderRadius:'50%',
                           backgroundColor:'lightseagreen',
                           border:'1px solid var(--white)',
-                          height:'34% !important'
-                   }}> <img class="img" style={{borderRadius:'50%',
+                          height:'34% !important' }}> <img class="img" style={{borderRadius:'50%',
                                                 width:'39%',
                                                 border:'1px solid #37869d',
-                                                height:'34% !important'}}src="https://marketplace.parintekinnovation.com/images/rajesh.png" />
-    <div style={{width:'50%',
+                                                height:'34% !important'}}src={speaker_photo} />
+            <div style={{width:'50%',
                   position:'relative',
                   left:'2%',
                   top:'40px',
-                  display:'inline-block',
-                  }}>
-                    <h6 style={{color:'#fff',
-                fontWeight:'700',
-                fontSize:'27px'}}>Rajesh Singh</h6>
+                  display:'inline-block',}}>
 
-    <h6  style={{color:'#fff'}}>Director and Co-Founder - Parintek Innovations,</h6>
-    <h6 style={{color:'#fff'}}>Ex–VP CPA Global,</h6>
-    <h6   style={{color:'#fff'}}>Ex-Assistant professor, NIT</h6>
-    </div>
-    
-    
-</div>
-           
-    
-            
-                <p style={{padding:'4px',
+                <h6 style={{color:'#fff',
+                fontWeight:'700',
+                fontSize:'27px'}}>{speaker_name}</h6>
+
+               <h6  style={{color:'#fff'}}dangerouslySetInnerHTML={{ __html: speaker_summary }}></h6>
+         </div>  
+      </div>
+           <p style={{padding:'4px',
               textAlign:'justify',
               color:'#000',
               fontStyle:'italic',
               marginTop:'4%',
-              fontWeight:'600'}}> In his current role for Parintek, he drives the IP
-                    roadmap and business of the company with a
-                    vision to build IP culture in India. Rajesh has managed intellectual property
-                    related project execution and delivery for
-                    multiple fortune 500 clients.</p>
-            
-                <p style={{
-              textAlign:'justify',
-              color:'#000',
-              fontStyle:'italic',
-              fontWeight:'600'}}> He was
-                    instrumental in supporting multiple
-                    corporations with patent sale, patent litigation
-                    & licensing, patent drafting, office action
-                    response, prior art search and analytics
-                    projects. He has managed operations
-                    for a leading IP service provider for supporting
-                    clients (including Law firms, corporate and
-                    academia) across geography.</p>
-                <p style={{
-              textAlign:'justify',
-              color:'#000',
-              fontStyle:'italic',
-              fontWeight:'600'}}>He has successfully designed and executed
-                    multiple IP service optimization projects which
-                    resulted in huge cost savings for his client as
-                    well as for his firm.</p>
+              fontWeight:'500'}}dangerouslySetInnerHTML={{ __html: about_speaker }}></p>
             </div>
         </div>
-
-
-
     </div>
-
-
-
-                  
-                
-            </div>
-         
-
-          
-        </div>
-    </div>
-    <div class="col-md-5">
-        <div class="col-md-12" style={{background:'lightseagreen',
+   
+  </div>
+</div>
+</div>
+<div class="col-md-5">
+    <div class="col-md-12" style={{background:'lightseagreen',
                                         padding:'6%',
                                         textAlign:'center',
                                         marginLeft:'15%',
                                         marginBottom:'5%',
                                         width:'80%'}} >
-            <h5 style={{color:'#fff',
+      <h5 style={{color:'#fff',
                         fontSize:'24px',
                         fontFamily:'cursive',
-                        }}>
-Register for the Webinar <br/></h5>
+                        }}>Register for the Webinar <br/></h5>
 
-<ul style={{color:'#fff',
+     <ul style={{color:'#fff',
             lineHeight:'2',
             fontWeight:'600',
             listStyleType:'none',
@@ -248,10 +178,10 @@ Register for the Webinar <br/></h5>
             background:'#fff',
             padding:'0%'
                         }}>
-                    <li>Date: Wednesday, Nov 11, 2020</li>
-                    <li>Time: 6 PM (IST)</li>
-                    <li>Duration: 1 Hour</li>
-</ul>
+                    <li>Date: {webinar_date}</li>
+                    <li>Time: {webinar_time}</li>
+                    <li>Duration: {webinar_duration}</li>
+       </ul>
 
 
 <hr style={{borderTop:'0.5px solid #fff'}} />
@@ -259,109 +189,22 @@ Register for the Webinar <br/></h5>
 <br/>           
             <div class="row" style={{fontSize:'14px'}}>
                 <div class="col-sm-12 col-md-12 col-lg-12">
-                <form onSubmit={this.handleSubmit}>
-                             
-                <div class="row">
-                    <div class="col-sm-12">
-                        <div class="form-group mb-2">
-                            <input type="text" name="first_name"  style={{borderRadius:'0px',padding:'25px'}} 
-                            required class="form-control" 
-                            required placeholder="Your First Name"
-                            onChange={this.changeHandler}/>
-                           
-
-                        </div>
-                        <div class="form-group mb-2">
-                            <input type="text" name="last_name" style={{borderRadius:'0px',padding:'25px'}} 
-                            required class="form-control" 
-                            required placeholder="Your Last Name"
-                            onChange={this.changeHandler}/>
-                           
-
-                        </div>
-                    </div>
-                    <div class="col-sm-12">
-                        <div class="form-group mb-2">
-                            <input type="text" name="email"  style={{borderRadius:'0px',padding:'25px'}} 
-                            required class="form-control" 
-                            required placeholder="Your Email Address"
-                            onChange={this.changeHandler}/>
-                           
-                        </div>
-                    </div>
-                </div>
-                <div class="form-group mb-2">
-                    <input type="text" name="company_name" style={{borderRadius:'0px',padding:'25px'}} 
-                    class="form-control"  placeholder="Your Company Name (Optional)"
-                    onChange={this.changeHandler}/>
-                   
-
-                </div>
-                 {/* <div class="form-group form-primary">
-                 
-                    <select class="form-control" name="currency">
-                    <option value="USD">Select Your Payment Currency</option>
-                    <option value="INR">INR</option>
-                    <option value="USD">USD</option>
-                    </select>
-
-                </div>
-                <div class="form-group form-primary">
-                    <span class="form-bar">No of sessions available  5</span>
-                    <select class="form-control select2" name="session_booked">
-                    <option value="null">Book One-on-One Session </option>
-                  
-                                        <option value="1">Yes</option>
-                    <option value="0">No</option>
-                                        
-                  
-                    </select>
-
-                </div>
-                 <div class="form-group form-primary">
-                    <h5> Webinar Fees: <span>$0 / INR 0</span> </h5>
-                    
-                    
-                  
-
-                    <span class="form-bar"></span>
-
-                </div>   */}
-                
-<hr  style={{borderTop:'0.5px solid #fff'}} />
-
-{/* <p style={{fontWeight:'400',
-           textAlign:'justify',
-           color:'#fff',
-           }}>Further, five participants can have an option to book a one-on-one session with the speaker. The session needs to be booked at the time of registration.</p> */}
-                
-                <div class="row">
-                    <div class="col-sm-12" >
-                        <div class="form-group form-primary">
-                            <button type="submit"  style={{background: 'var(--white)',
-  border: 'var(--cyan)',color:'#20b2aa',
-  borderRadius:'70px',marginBottom:'30px'}} class="btn btn-primary col-md-12 appao-btn appao-btn2">Book Now
-  {this.state.formError ? (<Alert/>) : (
-                                        <span></span>
-                                    )}</button>
-
-                        </div>
-                    </div>
-                </div>
-
-            </form>
-                </div>
-               
-        
-                
+               <WebinarForm/>
+                </div>  
             </div>
-         
-
-          
         </div>
+
+
+        {this.state.classipi === "0" ? (
+        <span></span>
+  ) : (
+    <img src="https://pbs.twimg.com/profile_images/1296747757185589248/-qCI0Psh_400x400.jpg"/>
+  )}
+
+
+  
     </div>
 </div>
-  
 </div>
 
 

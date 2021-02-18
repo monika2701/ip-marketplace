@@ -1,12 +1,41 @@
 import React,{Component} from 'react';
-import {Link} from 'react-router-dom';
+import axios from 'axios';
+import {Link } from 'react-router-dom';
 
 
 
 class Ribbon extends Component {
+    constructor(props){
+        super(props);
     
+        this.state={
+          is_active: null,
+          webinar_id: null
+         
+        };
+      
+      }
+      componentDidMount() {
+        
+        axios.post('https://marketplace.parintekinnovation.com/api/webinar.php?method=iswebinaractive')
+            .then(result => { 
+            console.log(result.data);
+            var js = result.data.Response;
+            if (result.data) {
+              localStorage.setItem('isWebinarActive', js.is_active);
+              localStorage.setItem('WebinarID', js.webinar_id);
+           }
+            
+
+    })
+} 
+     
     render() {
-        if (window.location.pathname === '/webinar') return null;
+      
+      var status = localStorage.getItem('isWebinarActive');
+        if(status == '0') {
+            return null;
+          }
         return (
 
          <div class="container">
@@ -35,6 +64,7 @@ class Ribbon extends Component {
             </div>
 
         );
+        
     }
 }
 
