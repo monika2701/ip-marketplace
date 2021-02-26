@@ -14,7 +14,7 @@ import SignUp from './components/SignUpComponent';
 import Overlay from './extras/OverlayComponent';
 import ServiceEnquiry from './components/ServiceEnquiryComponent';
 import StudentEvaluation from './components/StudentPage/studentEvaluation';
-/* import Ribbon from './extras/Ribbon'; */
+import PaypalButtons from './components/Webinars/PaypalButtons';
 import { BrowserRouter} from 'react-router-dom';
 import { Switch, Route, Redirect } from 'react-router-dom';
 import './App.css'; 
@@ -42,6 +42,7 @@ class App extends Component {
               <Route path='/signup' component={SignUp} />
               <Route path='/serviceEnquiry' component={ServiceEnquiry} />
               <Route path='/ideaEvaluation' component={StudentEvaluation} />
+              <Route path='/webinarRegistration' component={PaypalButtons} />
               <Redirect to="/home" />
           </Switch>
 

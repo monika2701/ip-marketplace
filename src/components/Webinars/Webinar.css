@@ -4,7 +4,20 @@
 body{
   font-family: "Roboto";
 }
+.main{
+  min-height: 60vh;
 
+  display: flex;
+  flex-direction: column;
+
+  align-items: center;
+  justify-content: center;
+}
+/* .main{
+  margin-left:150px;
+   align-items: center;
+   justify-content: center;
+ } */
 
 .hs-webinar-hero {
   position: relative;
@@ -40,7 +53,7 @@ body{
   min-width: 250px;
 }
 
-#home {
+#webinarHome {
   width: 100%;
   height: 75vh;
   align-items: center;

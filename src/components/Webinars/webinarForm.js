@@ -2,6 +2,8 @@ import React,{Component} from 'react';
 import './Webinar.css';
 import axios from 'axios';
 import Alert from  '../../extras/alert';
+import {Link,Redirect} from 'react-router-dom';
+
 
 class WebinarForm extends Component {
   state = {
@@ -14,7 +16,9 @@ class WebinarForm extends Component {
       payment_status:'0',
       payment_value:'0',
       no_of_session_booked:'1',
-      formError: false
+      is_paid: localStorage.getItem('fee'),
+      formError: false,
+      redirect: false,
   };
   changeHandler = (e) => {
     this.setState({[e.target.name]: e.target.value })
@@ -52,12 +56,20 @@ class WebinarForm extends Component {
         .then(result => {
          console.log(result.data);
          this.setState({formError: true});
+         this.setState({redirect: true});
+         localStorage.setItem('reg_id', result.data.Response.register_id);
+         localStorage.setItem('webinarEmail', email);
             
         })
         .catch(error => {
             console.log(error);
           
         });
+};
+renderRedirect = () => {
+    if (this.state.redirect) {
+        return <Redirect to='/webinarRegistration'/>
+    }
 };
 
   
@@ -143,12 +155,29 @@ class WebinarForm extends Component {
                              <div class="row">
                                  <div class="col-sm-12" >
                                      <div class="form-group form-primary">
-                                         <button type="submit"  style={{background: 'var(--white)',
-               border: 'var(--cyan)',color:'#20b2aa',
-               borderRadius:'70px',marginBottom:'30px'}} class="btn btn-primary col-md-12 appao-btn appao-btn2">Book Now
-               {this.state.formError ? (<Alert/>) : (
-                                                     <span></span>
-                                                 )}</button>
+                                     {/* <button type="submit"  style={{background: 'var(--white)',
+           border: 'var(--cyan)',color:'#20b2aa',
+           borderRadius:'70px',marginBottom:'30px'}} class="btn btn-primary col-md-12 appao-btn appao-btn2">Book Now
+           {this.state.formError ? (<Alert/>) : (
+                                                 <span></span>
+                                             )}</button> */}
+
+                                     {this.state.is_paid === "1" ? (
+           <button type="submit"  style={{background: 'var(--white)',
+           border: 'var(--cyan)',color:'#20b2aa',
+           borderRadius:'70px',marginBottom:'30px'}} class="btn btn-primary col-md-12 appao-btn appao-btn2">Book Now
+           {this.state.formError ? (<Alert/>) : (
+                                                 <span></span>
+                                             )}</button>
+      ) : (
+        <button type="submit"  style={{background: 'var(--white)',
+        border: 'var(--cyan)',color:'#20b2aa',
+        borderRadius:'70px',marginBottom:'30px'}} class="btn btn-primary col-md-12 appao-btn appao-btn2">Register Now
+        {this.renderRedirect()}</button>
+      )}
+
+
+                                        
              
                                      </div>
                                  </div>

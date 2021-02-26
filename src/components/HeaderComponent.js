@@ -43,7 +43,7 @@ export default class Header extends Component {
 
     render() {
     
-        if (window.location.pathname === '/webinar') return null;
+        if (window.location.pathname === '/webinar' || window.location.pathname === '/webinarRegistration') return null;
        
         if(!localStorage.getItem('token')) {
             return (

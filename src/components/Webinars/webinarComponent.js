@@ -1,9 +1,8 @@
 import React,{Component} from 'react';
+import axios from 'axios';
 import './Webinar.css';
 import WebinarForm from './webinarForm';
-import axios from 'axios';
-import ReactHtmlParser from 'react-html-parser'; 
-import parse from 'html-react-parser';
+
 
 class Webinar extends Component {
   constructor(props) {
@@ -17,7 +16,6 @@ class Webinar extends Component {
 
 componentDidMount() {
     
-  
     axios.post('https://marketplace.parintekinnovation.com/api/webinar.php?method=webinarInfo', this.state)
 
         .then(result => { 
@@ -34,16 +32,15 @@ componentDidMount() {
           this.setState({ speaker_summary: js.speaker_summary});
           this.setState({ classipi: js.is_classipi});
           this.setState({ about_webinar: js.about_webinar});
-        
+          localStorage.setItem('fee',js.is_paid);
+          localStorage.setItem('webinarName',js.webinar_name);
         }
-        console.log(this.state.webinar_name);
-       
-})
-.catch(error => {
-  console.log(error);
-  
-});
-}
+      })
+        .catch(error => {
+          console.log(error);
+          
+        });
+    }
   
  
  render(){
@@ -54,158 +51,152 @@ componentDidMount() {
           speaker_name,speaker_photo,speaker_summary,classipi,about_webinar } = this.state;
 
    return (
-  <>
-<body>
+    <>
+    <body>
 
-<div class="hs-webinar-hero">
-  <div class="hs-webinar-hero__container">
-    <div class="hs-webinar-hero__top">
-      <div class="hs-webinar-hero__top-left">
-        <div class="hs-webinar-hero__logo"><a href="#"><img src="assets/logo1.png" /></a></div>
+    <div class="hs-webinar-hero">
+      <div class="hs-webinar-hero__container">
+        <div class="hs-webinar-hero__top">
+          <div class="hs-webinar-hero__top-left">
+            <div class="hs-webinar-hero__logo"><a href="#"><img src="assets/logo1.png" /></a></div>
+          </div>
+        </div> 
       </div>
-      
-    </div> 
-  </div>
-</div>
+    </div>
 
-<section id="home">
-  <div class="home_text"> 
-  {/* {ReactHtmlParser(webinar_name)} */}
-  {/* {parse('<div>webinar_name</div>')} */}
- {/*  <div dangerouslySetInnerHTML={{__html: console.log(webinar_name)}} /> */}
-  
-    <h6 style={{ fontWeight: 'bolder',fontSize:'2.5em'}} dangerouslySetInnerHTML={{ __html: webinar_name }}></h6>
-   {/*  <h2 style={{ fontWeight: 'bolder',fontSize:'2.5em'}}>{webinar_name}</h2> */}
-  </div>
-</section>
+    <section id="webinarHome">
+      <div class="home_text"> 
+        <h6 style={{ fontWeight: 'bolder',fontSize:'2.5em'}} dangerouslySetInnerHTML={{ __html: webinar_name }}></h6>
+      </div>
+    </section>
 
 
 
-<div class="container">
-    <div class="row">
-    <div class="col-md-7">
-        <div class="col-md-12">
-        <h5 style={{fontSize: "26px",
-                    margin: '2%',
-                    color: '#05053e',
-                    letterSpacing: '2px',
-                    fontFamily: 'cursive',
-                    fontWeight: '400'}}>About the webinar</h5>
-      
-      <h5 style={{fontSize: "20px",
-                    marginLeft: '4%',
-                    color: '#000',
-                    fontFamily: '"Open Sans",Arial,sans-serif',
-                    fontWeight: '500'}} dangerouslySetInnerHTML={{ __html: about_webinar }}></h5>
-
-
-            <div class="row" style={{fontSize: "14px",
-                    letterSpacing: '1px'}}>
-               {/*  <p>Further, five
-                    participants can have an option to block
-                    a 10 minutes one on one session with
-                    speaker post presentation. The one on
-                    one session needs to booked at the time
-                    of registration for Q&A session</p> */}
-
-
-                  
-               
-    <div class="section row col-md-12" style={{fontSize: "14px",margin: '0 auto',padding: '10px'}}>
-        <div class="row"> 
-            <div class="col-md-12 col-sm-12" style={{paddingTop:'2%'}}>
+    <div class="container">
+        <div class="row">
+        <div class="col-md-7">
+            <div class="col-md-12">
             <h5 style={{fontSize: "26px",
-                         margin: '2%',
-                         color:'05053e',
-                         letterSpacing:'2px',
-                         fontFamily:'cursive',
-                         fontWeight:'400',}}>About the Speaker</h5>
+                        margin: '2%',
+                        color: '#05053e',
+                        letterSpacing: '2px',
+                        fontFamily: 'cursive',
+                        fontWeight: '400'}}>About the webinar</h5>
+          
+            <h5 style={{fontSize: "20px",
+                        marginLeft: '4%',
+                        color: '#000',
+                        fontFamily: '"Open Sans",Arial,sans-serif',
+                        fontWeight: '500'}} dangerouslySetInnerHTML={{ __html: about_webinar }}></h5>
 
-            <div style={{borderRadius:'50%',
-                          backgroundColor:'lightseagreen',
-                          border:'1px solid var(--white)',
-                          height:'34% !important' }}> <img class="img" style={{borderRadius:'50%',
-                                                width:'39%',
-                                                border:'1px solid #37869d',
-                                                height:'34% !important'}}src={speaker_photo} />
-            <div style={{width:'50%',
-                  position:'relative',
-                  left:'2%',
-                  top:'40px',
-                  display:'inline-block',}}>
 
-                <h6 style={{color:'#fff',
-                fontWeight:'700',
-                fontSize:'27px'}}>{speaker_name}</h6>
+                <div class="row" style={{fontSize: "14px",
+                        letterSpacing: '1px'}}>
+                  {/*  <p>Further, five
+                        participants can have an option to block
+                        a 10 minutes one on one session with
+                        speaker post presentation. The one on
+                        one session needs to booked at the time
+                        of registration for Q&A session</p> */}
 
-               <h6  style={{color:'#fff'}}dangerouslySetInnerHTML={{ __html: speaker_summary }}></h6>
-         </div>  
+
+                      
+                  
+        <div class="section row col-md-12" style={{fontSize: "14px",margin: '0 auto',padding: '10px'}}>
+            <div class="row"> 
+                <div class="col-md-12 col-sm-12" style={{paddingTop:'2%'}}>
+                <h5 style={{fontSize: "26px",
+                            margin: '2%',
+                            color:'05053e',
+                            letterSpacing:'2px',
+                            fontFamily:'cursive',
+                            fontWeight:'400',}}>About the Speaker</h5>
+
+                <div style={{borderRadius:'50%',
+                              backgroundColor:'lightseagreen',
+                              border:'1px solid var(--white)',
+                              height:'34% !important' }}> <img class="img" style={{borderRadius:'50%',
+                                                    width:'39%',
+                                                    border:'1px solid #37869d',
+                                                    height:'34% !important'}}src={speaker_photo} />
+                <div style={{width:'50%',
+                      position:'relative',
+                      left:'2%',
+                      top:'40px',
+                      display:'inline-block',}}>
+
+                    <h6 style={{color:'#fff',
+                    fontWeight:'700',
+                    fontSize:'27px'}}>{speaker_name}</h6>
+
+                  <h6  style={{color:'#fff'}}dangerouslySetInnerHTML={{ __html: speaker_summary }}></h6>
+            </div>  
+          </div>
+              <p style={{padding:'4px',
+                  textAlign:'justify',
+                  color:'#000',
+                  fontStyle:'italic',
+                  marginTop:'4%',
+                  fontWeight:'500'}}dangerouslySetInnerHTML={{ __html: about_speaker }}></p>
+                </div>
+            </div>
+        </div>
+      
       </div>
-           <p style={{padding:'4px',
-              textAlign:'justify',
-              color:'#000',
-              fontStyle:'italic',
-              marginTop:'4%',
-              fontWeight:'500'}}dangerouslySetInnerHTML={{ __html: about_speaker }}></p>
+    </div>
+    </div>
+    <div class="col-md-5">
+        <div class="col-md-12" style={{background:'lightseagreen',
+                                            padding:'6%',
+                                            textAlign:'center',
+                                            marginLeft:'15%',
+                                            marginBottom:'5%',
+                                            width:'80%'}} >
+          <h5 style={{color:'#fff',
+                            fontSize:'24px',
+                            fontFamily:'cursive',
+                            }}>Register for the Webinar <br/></h5>
+
+        <ul style={{color:'#fff',
+                lineHeight:'2',
+                fontWeight:'600',
+                listStyleType:'none',
+                fontSize:'16px',
+                marginLeft:'-12%',
+                letterSpacing:'1px',
+                color:'lightseagreen',
+                margin:'0%',
+                background:'#fff',
+                padding:'0%'
+                            }}>
+                        <li>Date: {webinar_date}</li>
+                        <li>Time: {webinar_time}</li>
+                        <li>Duration: {webinar_duration}</li>
+          </ul>
+
+
+    <hr style={{borderTop:'0.5px solid #fff'}} />
+              
+    <br/>           
+                <div class="row" style={{fontSize:'14px'}}>
+                    <div class="col-sm-12 col-md-12 col-lg-12">
+                  <WebinarForm/>
+                    </div>  
+                </div>
             </div>
+
+
+            {this.state.classipi === "0" ? (
+            <span></span>
+      ) : (
+        <img src="https://pbs.twimg.com/profile_images/1296747757185589248/-qCI0Psh_400x400.jpg"/>
+      )}
+
+
+      
         </div>
     </div>
-   
-  </div>
-</div>
-</div>
-<div class="col-md-5">
-    <div class="col-md-12" style={{background:'lightseagreen',
-                                        padding:'6%',
-                                        textAlign:'center',
-                                        marginLeft:'15%',
-                                        marginBottom:'5%',
-                                        width:'80%'}} >
-      <h5 style={{color:'#fff',
-                        fontSize:'24px',
-                        fontFamily:'cursive',
-                        }}>Register for the Webinar <br/></h5>
-
-     <ul style={{color:'#fff',
-            lineHeight:'2',
-            fontWeight:'600',
-            listStyleType:'none',
-            fontSize:'16px',
-            marginLeft:'-12%',
-            letterSpacing:'1px',
-            color:'lightseagreen',
-            margin:'0%',
-            background:'#fff',
-            padding:'0%'
-                        }}>
-                    <li>Date: {webinar_date}</li>
-                    <li>Time: {webinar_time}</li>
-                    <li>Duration: {webinar_duration}</li>
-       </ul>
-
-
-<hr style={{borderTop:'0.5px solid #fff'}} />
-           
-<br/>           
-            <div class="row" style={{fontSize:'14px'}}>
-                <div class="col-sm-12 col-md-12 col-lg-12">
-               <WebinarForm/>
-                </div>  
-            </div>
-        </div>
-
-
-        {this.state.classipi === "0" ? (
-        <span></span>
-  ) : (
-    <img src="https://pbs.twimg.com/profile_images/1296747757185589248/-qCI0Psh_400x400.jpg"/>
-  )}
-
-
-  
     </div>
-</div>
-</div>
 
 
 

@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 
 
 function Footer() {
-    if (window.location.pathname === '/webinar') return null;
+    if (window.location.pathname === '/webinar' || window.location.pathname === '/webinarRegistration') return null;
     return(
         <div class="footer-bottom">
         <div class="container">
