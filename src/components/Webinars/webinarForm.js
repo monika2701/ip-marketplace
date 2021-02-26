@@ -162,7 +162,7 @@ renderRedirect = () => {
                                                  <span></span>
                                              )}</button> */}
 
-                                     {this.state.is_paid === "1" ? (
+                                     {this.state.is_paid === "0" ? (
            <button type="submit"  style={{background: 'var(--white)',
            border: 'var(--cyan)',color:'#20b2aa',
            borderRadius:'70px',marginBottom:'30px'}} class="btn btn-primary col-md-12 appao-btn appao-btn2">Book Now
